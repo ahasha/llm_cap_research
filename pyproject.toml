@@ -1,0 +1,61 @@
+[tool.black]
+line-length = 120
+single-quotes = false
+target-version = ["py311"]
+include = '\.pyi?$'
+exclude = [".git",".idea",".vscode", ".dvc",".pytest_cache","docs"]
+
+[tool.brunette]
+line-length = 120
+single-quotes = false
+target-version = ["3.11"]
+include = '\.pyi?$'
+exclude = [".git",".idea",".vscode", ".dvc",".pytest_cache","docs"]
+
+[tool.poetry]
+name = "llm_learning"
+version = "0.1.0"
+description = "Learning how to do document extraction with LLMs"
+authors = ["Alex Hasha <alex@hashadatascience.com>"]
+readme = "README.md"
+packages = [{include = "llm_learning"}]
+
+
+
+[tool.poetry.dependencies]
+click = "^8.0.4"
+dvc = "^2.55.0"
+dvc-gs = "^2.22.0"
+dvc-ssh = "^2.22.1"
+jupyter = "^1.0.0"
+matplotlib = "^3.7.1"
+numpy = "^1.24.2"
+python = "~3.11"
+pandas = "^2.0.0"
+pyarrow = "^14.0.1"
+sqlalchemy = "^1.4.32"
+scikit-learn = "^1.2.2"
+python-dotenv = "^1.0.0"
+openai = "^1.30.1"
+pypdf = "^4.2.0"
+langchain = "^0.2.0"
+huggingface-hub = "^0.23.0"
+langchain-community = "^0.2.0"
+langchain-openai = "^0.1.7"
+
+
+[tool.poetry.group.dev.dependencies]
+sphinx = "^6.1.3"
+nbsphinx = "^0.9.1"
+pre-commit = "^3.2.2"
+myst-parser = "^1.0.0"
+sphinx-rtd-theme = "^1.2.0"
+flake8 = "^6.0.0"
+isort = "^5.12.0"
+brunette = "^0.2.8"
+pytest = "^7.3.1"
+sphinxcontrib-mermaid = "^0.8.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

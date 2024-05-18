@@ -1,0 +1,13 @@
+dbt_raw_data_for_llm_learning:
+  outputs:
+    dev:
+      account: {ACCOUNT}
+      database: {DATABASE}
+      password: {USER_PASSWORD}
+      role: {ROLE}
+      schema: {SCHEMA}
+      threads: 1
+      type: {TYPE}
+      user: {SNOWFLAKE_USER}
+      warehouse: {WAREHOUSE}
+  target: dev
