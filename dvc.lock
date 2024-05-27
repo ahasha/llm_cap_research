@@ -21,7 +21,7 @@ stages:
       md5: 7533278d4f0e65d0fd0032951d55223a
       size: 5545
   ashland:
-    cmd: llm_learning data/raw/Ashland-MA.pdf
+    cmd: llm_learning extract data/raw/Ashland-MA.pdf
     deps:
     - path: data/raw/Ashland-MA.pdf
       hash: md5
@@ -30,13 +30,13 @@ stages:
     outs:
     - path: data/processed/Ashland-MA-actions.csv
       hash: md5
-      md5: 238fd1500fccea208cf5696fd7982f23
-      size: 5237
+      md5: 5ca40719b4a565849515d975ee960ba8
+      size: 8342
     - path: data/processed/Ashland-MA-goals.csv
       hash: md5
-      md5: f1279e4ef7845854220dd06beb08dd3a
-      size: 3159
+      md5: 156fa42d94da077655312ab199314528
+      size: 3606
     - path: data/processed/Ashland-MA-strategies.csv
       hash: md5
-      md5: 1c7bd6fd53326736b4cd8d6277f298e1
-      size: 5263
+      md5: c6f0cedb031218f26e02ca4d669063ab
+      size: 4576

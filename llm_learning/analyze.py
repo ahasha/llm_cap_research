@@ -1,4 +1,5 @@
 import logging
+import os
 from enum import Enum
 from pathlib import Path
 from typing import Iterator, List, Optional
@@ -6,19 +7,18 @@ from typing import Iterator, List, Optional
 import dotenv
 import pandas as pd
 import typer
-import weave
 from langchain_core.documents import Document
 from langchain_core.pydantic_v1 import BaseModel, Field
 from pydantic import ValidationError
 from typing_extensions import Annotated
-
-weave.init("CAP-AI-Assistant")
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
 dotenv_path = ".env"
 dotenv.load_dotenv(dotenv_path)
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+# NOTE: langsmith auto-tracing requires LANGCHAIN_API_KEY set in .env
 
 app = typer.Typer()
 
