@@ -1,5 +1,6 @@
 import logging
 import sys
+
 import pandas as pd
 
 LOG_FORMAT = "%(asctime)s %(name)s %(levelname)s: %(message)s"
@@ -7,12 +8,13 @@ DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
 def configure_logging(log_file="pipeline.log"):
-
     # Get root logger
     root_logger = logging.getLogger()
 
     if root_logger.hasHandlers():
         root_logger.handlers.clear()
+
+    root_logger.setLevel(logging.DEBUG)
 
     # Create console handler and set level to INFO
     # We will log DEBUG messages to files only.

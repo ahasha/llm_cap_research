@@ -12,8 +12,9 @@ from langchain_core.pydantic_v1 import BaseModel, Field
 from pydantic import ValidationError
 from typing_extensions import Annotated
 
+from llm_learning.logging_config import configure_logging
+
 logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO)
 
 dotenv_path = ".env"
 dotenv.load_dotenv(dotenv_path)
@@ -35,13 +36,17 @@ class Goal(BaseModel):
     """Information about a strategic planning Goal.
 
     Goals are broad, quantifiable outcomes necessary to meet emissions targets and resilience goals.
+    If the goal does not mention a quantitative target or a target year, you should classify it as a Strategy instead.
     """
 
     id: str = Field(
         description="Unique Identifier.  If a Goal ID is given in the text, use this.  Otherwise, the first letter should be emissions_category letter."
     )
     emissions_category: EmissionsCategory = Field(
-        description="The category of emissions the goal is associated with"
+        description="""
+        The category of emissions the goal is associated with, e.g. Buildings, Transportation, Waste or Land Use, Energy.
+        Select Energy only if no other more specific emission category is mentioned, or if the goal pertains to electricity.
+        """
     )
     year: Optional[int] = Field(
         default=None,
@@ -50,8 +55,10 @@ class Goal(BaseModel):
         le=2050,
     )
     description: str = Field(
-        default=None,
-        description="A description of the goal which should include a specific, measurable, and quantifiable outcome",
+        description="A summary description of the goal which must include a measurable, quantitative outcome",
+    )
+    context: str = Field(
+        description="Verbatim text from the provided document on which the Goal description is based"
     )
 
 
@@ -59,27 +66,34 @@ class Strategy(BaseModel):
     """Information about a strategic planning Strategy.
 
     Strategies define general approaches to make progress toward goals.
-    They should be specific, but ned not necessarily be quantifiable.
+    They should be specific, but need not necessarily be quantifiable.
     They are frequently explicitly labeled as a "Strategy" in the text.
-    However, they are often described as "goals" with no associated quantifiable outcome.
+    However, they are often described in the text as "Goals", but with no associated quantitative outcome mentioned.
     """
 
     id: str = Field(
         description="Unique Identifier.  If a Strategy ID is given in the text, use this.  Otherwise, the first letter should be emissions_category letter."
     )
     emissions_category: EmissionsCategory = Field(
-        description="The category of emissions the strategy is associated with"
+        description="""
+        The category of emissions the goal is associated with, e.g. Buildings, Transportation, Waste or Land Use, Energy.
+        Select Energy only if no other more specific emission category is mentioned, or if the goal pertains to electricity.
+        """
     )
     related_goals: Optional[List[str]] = Field(
         description="A list of goal ids that this strategy is related to"
     )
     description: str = Field(default=None, description="A description of the strategy")
+    context: str = Field(
+        description="Verbatim text from the provided document on which the Strategy description is based"
+    )
 
 
 class Action(BaseModel):
     """Information about a strategic planning Action.
 
     Actions are specific, time-bound steps to implement strategies.
+    If the Action does not mention an owner or is very general, you should classify it as a Strategy instead.
     """
 
     id: str = Field(
@@ -88,20 +102,24 @@ class Action(BaseModel):
     emissions_category: EmissionsCategory = Field(
         description="The category of emissions the strategy is associated with"
     )
-    owner: Optional[str] = Field(
+    owner: Optional[List[str]] = Field(
         default=None,
         description="The organization or individuals responsible for the action, if known",
     )
-    related_stragegies: List[str] = Field(
-        description="A list of strategy ids that this strategy is related to"
+    related_stragegies: Optional[List[str]] = Field(
+        default=None,
+        description="A list of strategy ids that this action is related to",
     )
-    description: str = Field(default=None, description="A description of the action")
+    description: str = Field(description="A summary description of the action")
+    context: str = Field(
+        description="Verbatim text from the provided document on which the Action description is based"
+    )
 
 
 class Results(BaseModel):
-    goals: List[Goal]
-    strategies: List[Strategy]
-    actions: List[Action]
+    goals: Optional[List[Goal]] = []
+    strategies: Optional[List[Strategy]] = []
+    actions: Optional[List[Action]] = []
 
 
 def results_to_goals_table(results, page, municipality):
@@ -202,7 +220,10 @@ def extract(
     goals_path = Path("data/processed", pdf.stem + "-goals.csv")
     strategies_path = Path("data/processed", pdf.stem + "-strategies.csv")
     actions_path = Path("data/processed", pdf.stem + "-actions.csv")
+    json_path = Path("data/processed", pdf.stem + ".json")
     municipality = pdf.stem.replace("-", ", ")
+
+    configure_logging(f"pipeline_logs/{pdf.stem}.log")
 
     from langchain_openai import ChatOpenAI
 
@@ -213,7 +234,7 @@ def extract(
     goals_tables = []
     strategies_tables = []
     actions_tables = []
-
+    json_output = []
     for page in chunk(pdf):
         logger.info(
             f"Processing page {page.metadata['page']} from {page.metadata['source']}"
@@ -222,11 +243,11 @@ def extract(
         print(page.page_content)
         # Ask user whether to proceed with AI extraction
         try:
-            user_input = input("Proceed with AI extraction? (y/n/q): ")
-            if user_input.lower() == "q":
-                break
-            elif user_input.lower() != "y":
-                continue
+            # user_input = input("Proceed with AI extraction? (y/n/q): ")
+            # if user_input.lower() == "q":
+            #     break
+            # elif user_input.lower() != "y":
+            #     continue
 
             logger.info("Extracting from page %s...", page.metadata["page"])
             try:
@@ -234,6 +255,19 @@ def extract(
             except ValidationError as e:
                 logger.error(f"A validation error occurred: {str(e)}")
                 continue
+
+            json_output.append(
+                {
+                    "source": page.metadata["source"],
+                    "page": page.metadata["page"],
+                    "content": page.page_content,
+                    "municipality": municipality,
+                    "results": result.dict(),
+                }
+            )
+            json_output.str = json_output.dumps()
+            with open(json_path, "w") as f:
+                f.write(json_output.str)
 
             goals_tables.append(results_to_goals_table(result, page, municipality))
             strategies_tables.append(

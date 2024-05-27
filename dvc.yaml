@@ -3,15 +3,19 @@ stages:
     cmd: llm_learning extract data/raw/Wayland-MA.pdf
     deps:
       - data/raw/Wayland-MA.pdf
+      - llm_learning/analyze.py
     outs:
       - data/processed/Wayland-MA-goals.csv
       - data/processed/Wayland-MA-strategies.csv
       - data/processed/Wayland-MA-actions.csv
+      - data/processed/Wayland-MA.json
   ashland:
     cmd: llm_learning extract data/raw/Ashland-MA.pdf
     deps:
       - data/raw/Ashland-MA.pdf
+      - llm_learning/analyze.py
     outs:
       - data/processed/Ashland-MA-goals.csv
       - data/processed/Ashland-MA-strategies.csv
       - data/processed/Ashland-MA-actions.csv
+      - data/processed/Ashland-MA.json

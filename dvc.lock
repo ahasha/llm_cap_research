@@ -7,19 +7,23 @@ stages:
       hash: md5
       md5: 5188dbbc5e9ce128975d950b569805ee
       size: 423409
+    - path: llm_learning/analyze.py
+      hash: md5
+      md5: 5704298b88e0ab53a9c578b36afcc323
+      size: 9794
     outs:
     - path: data/processed/Wayland-MA-actions.csv
       hash: md5
-      md5: b77312f62b8ca095e2a1f42ddde72720
-      size: 9584
+      md5: 156747341412c27b6c0c6f8ee6e92eed
+      size: 6869
     - path: data/processed/Wayland-MA-goals.csv
       hash: md5
-      md5: 707afe9f08c60a0e2f0b0d374804fd65
-      size: 3051
+      md5: ef4364d2dfa688e0446dee0e51c34665
+      size: 5902
     - path: data/processed/Wayland-MA-strategies.csv
       hash: md5
-      md5: 7533278d4f0e65d0fd0032951d55223a
-      size: 5545
+      md5: 089e991943835b10b1cb8618fca9285a
+      size: 7731
   ashland:
     cmd: llm_learning extract data/raw/Ashland-MA.pdf
     deps:
@@ -27,16 +31,20 @@ stages:
       hash: md5
       md5: 5653c2456f4e019c994cb67786cf87c2
       size: 3887273
+    - path: llm_learning/analyze.py
+      hash: md5
+      md5: 5704298b88e0ab53a9c578b36afcc323
+      size: 9794
     outs:
     - path: data/processed/Ashland-MA-actions.csv
       hash: md5
-      md5: 5ca40719b4a565849515d975ee960ba8
-      size: 8342
+      md5: 407f8e032169be5f510dc130ab7d3da8
+      size: 2499
     - path: data/processed/Ashland-MA-goals.csv
       hash: md5
-      md5: 156fa42d94da077655312ab199314528
-      size: 3606
+      md5: d55d4692f9e95301c2b7bff70d9d9fb2
+      size: 8445
     - path: data/processed/Ashland-MA-strategies.csv
       hash: md5
-      md5: c6f0cedb031218f26e02ca4d669063ab
-      size: 4576
+      md5: fc53b9993e0b705cb1c90539e083805a
+      size: 14978
