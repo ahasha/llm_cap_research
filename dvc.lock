@@ -1,0 +1,42 @@
+schema: '2.0'
+stages:
+  wayland:
+    cmd: llm_learning data/raw/Wayland-MA.pdf
+    deps:
+    - path: data/raw/Wayland-MA.pdf
+      hash: md5
+      md5: 5188dbbc5e9ce128975d950b569805ee
+      size: 423409
+    outs:
+    - path: data/processed/Wayland-MA-actions.csv
+      hash: md5
+      md5: 31cf58a4c447130c6b1e816f85a177c5
+      size: 5010
+    - path: data/processed/Wayland-MA-goals.csv
+      hash: md5
+      md5: aa317a3f2b692348e51d8dd2045b242f
+      size: 2081
+    - path: data/processed/Wayland-MA-strategies.csv
+      hash: md5
+      md5: ff43c8287f36cee23fb561fbe6185ea7
+      size: 2159
+  ashland:
+    cmd: llm_learning data/raw/Ashland-MA.pdf
+    deps:
+    - path: data/raw/Ashland-MA.pdf
+      hash: md5
+      md5: 5653c2456f4e019c994cb67786cf87c2
+      size: 3887273
+    outs:
+    - path: data/processed/Ashland-MA-actions.csv
+      hash: md5
+      md5: 238fd1500fccea208cf5696fd7982f23
+      size: 5237
+    - path: data/processed/Ashland-MA-goals.csv
+      hash: md5
+      md5: f1279e4ef7845854220dd06beb08dd3a
+      size: 3159
+    - path: data/processed/Ashland-MA-strategies.csv
+      hash: md5
+      md5: 1c7bd6fd53326736b4cd8d6277f298e1
+      size: 5263

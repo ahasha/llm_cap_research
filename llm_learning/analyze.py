@@ -1,16 +1,18 @@
 import logging
 from enum import Enum
 from pathlib import Path
-
-# import os
 from typing import Iterator, List, Optional
 
 import dotenv
 import pandas as pd
 import typer
+import weave
 from langchain_core.documents import Document
 from langchain_core.pydantic_v1 import BaseModel, Field
+from pydantic import ValidationError
 from typing_extensions import Annotated
+
+weave.init("CAP-AI-Assistant")
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -68,7 +70,7 @@ class Strategy(BaseModel):
     emissions_category: EmissionsCategory = Field(
         description="The category of emissions the strategy is associated with"
     )
-    related_goals: List[str] = Field(
+    related_goals: Optional[List[str]] = Field(
         description="A list of goal ids that this strategy is related to"
     )
     description: str = Field(default=None, description="A description of the strategy")
@@ -190,16 +192,17 @@ def chunks(pdf: Path):
 @app.command()
 def extract(
     pdf: Path,
-    municipality: str,
-    goals_path: Path,
-    strategies_path: Path,
-    actions_path: Path,
     llm_model: Annotated[str, typer.Option()] = "gpt-3.5-turbo",
 ):
     if not pdf.suffix == ".pdf":
         ValueError(f"File {pdf} is not a PDF file.")
     if not pdf.exists():
         ValueError(f"PDF file {pdf} does not exist.")
+
+    goals_path = Path("data/processed", pdf.stem + "-goals.csv")
+    strategies_path = Path("data/processed", pdf.stem + "-strategies.csv")
+    actions_path = Path("data/processed", pdf.stem + "-actions.csv")
+    municipality = pdf.stem.replace("-", ", ")
 
     from langchain_openai import ChatOpenAI
 
@@ -218,23 +221,37 @@ def extract(
         # Display page content to the user
         print(page.page_content)
         # Ask user whether to proceed with AI extraction
-        user_input = input("Proceed with AI extraction? (y/n): ")
-        if user_input.lower() != "y":
-            continue
+        try:
+            user_input = input("Proceed with AI extraction? (y/n/q): ")
+            if user_input.lower() == "q":
+                break
+            elif user_input.lower() != "y":
+                continue
 
-        result = runnable.invoke({"text": page.page_content})
-        goals_tables.append(results_to_goals_table(result, page, municipality))
-        strategies_tables.append(
-            results_to_strategies_table(result, page, municipality)
-        )
-        actions_tables.append(results_to_actions_table(result, page, municipality))
+            logger.info("Extracting from page %s...", page.metadata["page"])
+            try:
+                result = runnable.invoke({"text": page.page_content})
+            except ValidationError as e:
+                logger.error(f"A validation error occurred: {str(e)}")
+                continue
+
+            goals_tables.append(results_to_goals_table(result, page, municipality))
+            strategies_tables.append(
+                results_to_strategies_table(result, page, municipality)
+            )
+            actions_tables.append(results_to_actions_table(result, page, municipality))
+        except Exception as e:
+            logger.error(f"An error occurred: {str(e)}")
 
     goals_df = pd.concat(goals_tables)
     strategies_df = pd.concat(strategies_tables)
     actions_df = pd.concat(actions_tables)
 
+    logger.info("Writing goals to %s", goals_path)
     goals_df.to_csv(goals_path, index=False)
+    logger.info("Writing strategies to %s", strategies_path)
     strategies_df.to_csv(strategies_path, index=False)
+    logger.info("Writing actions to %s", actions_path)
     actions_df.to_csv(actions_path, index=False)
 
 

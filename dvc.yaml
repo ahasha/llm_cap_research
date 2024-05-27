@@ -1,4 +1,17 @@
 stages:
-
-  stage1:
-    cmd: echo "Hello"
+  wayland:
+    cmd: llm_learning data/raw/Wayland-MA.pdf
+    deps:
+      - data/raw/Wayland-MA.pdf
+    outs:
+      - data/processed/Wayland-MA-goals.csv
+      - data/processed/Wayland-MA-strategies.csv
+      - data/processed/Wayland-MA-actions.csv
+  ashland:
+    cmd: llm_learning data/raw/Ashland-MA.pdf
+    deps:
+      - data/raw/Ashland-MA.pdf
+    outs:
+      - data/processed/Ashland-MA-goals.csv
+      - data/processed/Ashland-MA-strategies.csv
+      - data/processed/Ashland-MA-actions.csv
