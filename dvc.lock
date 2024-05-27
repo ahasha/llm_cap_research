@@ -1,7 +1,7 @@
 schema: '2.0'
 stages:
   wayland:
-    cmd: llm_learning data/raw/Wayland-MA.pdf
+    cmd: llm_learning extract data/raw/Wayland-MA.pdf
     deps:
     - path: data/raw/Wayland-MA.pdf
       hash: md5
@@ -10,16 +10,16 @@ stages:
     outs:
     - path: data/processed/Wayland-MA-actions.csv
       hash: md5
-      md5: 31cf58a4c447130c6b1e816f85a177c5
-      size: 5010
+      md5: b77312f62b8ca095e2a1f42ddde72720
+      size: 9584
     - path: data/processed/Wayland-MA-goals.csv
       hash: md5
-      md5: aa317a3f2b692348e51d8dd2045b242f
-      size: 2081
+      md5: 707afe9f08c60a0e2f0b0d374804fd65
+      size: 3051
     - path: data/processed/Wayland-MA-strategies.csv
       hash: md5
-      md5: ff43c8287f36cee23fb561fbe6185ea7
-      size: 2159
+      md5: 7533278d4f0e65d0fd0032951d55223a
+      size: 5545
   ashland:
     cmd: llm_learning data/raw/Ashland-MA.pdf
     deps:

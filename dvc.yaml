@@ -1,6 +1,6 @@
 stages:
   wayland:
-    cmd: llm_learning data/raw/Wayland-MA.pdf
+    cmd: llm_learning extract data/raw/Wayland-MA.pdf
     deps:
       - data/raw/Wayland-MA.pdf
     outs:
@@ -8,7 +8,7 @@ stages:
       - data/processed/Wayland-MA-strategies.csv
       - data/processed/Wayland-MA-actions.csv
   ashland:
-    cmd: llm_learning data/raw/Ashland-MA.pdf
+    cmd: llm_learning extract data/raw/Ashland-MA.pdf
     deps:
       - data/raw/Ashland-MA.pdf
     outs:
