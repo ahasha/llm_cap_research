@@ -1,0 +1,13 @@
+md5: 6375a47ecfb9141f2caecbedde9a61b9
+frozen: true
+deps:
+- checksum: '"388718f-5cb06e6f80eb7"'
+  size: 59273615
+  hash: md5
+  path: 
+    https://secureservercdn.net/50.62.195.83/env.320.myftpupload.com/wp-content/uploads/2021/09/BOSTON_city_of_boston_2019_climate_action_plan_update_4.pdf
+outs:
+- md5: 26fb53392fa6d63d492c44991674fe94
+  size: 59273615
+  hash: md5
+  path: Boston-MA.pdf

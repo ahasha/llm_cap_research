@@ -1,0 +1,13 @@
+md5: 7fec44cd9a1fcdf1c106eefe02ab33de
+frozen: true
+deps:
+- checksum: '"2c1e5c3-5cb06c0479274"'
+  size: 46261699
+  hash: md5
+  path: 
+    https://secureservercdn.net/50.62.195.83/env.320.myftpupload.com/wp-content/uploads/2021/09/Amherst_7.a.-CAARP-Final_061721-2.pdf
+outs:
+- md5: 64da848d2bed1b69ea450dc8c64a37b0
+  size: 46261699
+  hash: md5
+  path: Amherst-MA.pdf

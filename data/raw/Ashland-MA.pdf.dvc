@@ -1,0 +1,13 @@
+md5: 897cc2f68b9a0547f6797941668b46b8
+frozen: true
+deps:
+- checksum: '" "'
+  size: 3887273
+  hash: md5
+  path: 
+    https://www.ashlandmass.com/DocumentCenter/View/9830/Updated--Netzero-Strategy-Framework-April-2022
+outs:
+- md5: 5653c2456f4e019c994cb67786cf87c2
+  size: 3887273
+  hash: md5
+  path: Ashland-MA.pdf

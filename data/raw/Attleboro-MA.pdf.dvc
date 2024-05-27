@@ -1,0 +1,12 @@
+md5: 85c89e35712c69ea56485eeb6d32fa69
+frozen: true
+deps:
+- checksum: '" "'
+  size: 85431
+  hash: md5
+  path: https://www.cityofattleboro.us/1679/Environmental-Sustainability-and-Communi
+outs:
+- md5: 542513d95fdc27f836f42c6afcdc457a
+  size: 85431
+  hash: md5
+  path: Attleboro-MA.pdf

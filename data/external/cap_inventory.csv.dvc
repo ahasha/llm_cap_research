@@ -1,0 +1,5 @@
+outs:
+- md5: b662194ffca170611d34dfb770fc6c96
+  size: 3726
+  hash: md5
+  path: cap_inventory.csv

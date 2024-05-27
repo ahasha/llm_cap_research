@@ -1,0 +1,13 @@
+md5: 49307994d29937ba18e4ed839c07dd1d
+frozen: true
+deps:
+- checksum: '204772981053325063009193151138365492175'
+  size: 423409
+  hash: md5
+  path: 
+    https://www.wayland.ma.us/sites/g/files/vyhlif9231/f/uploads/wayland_climate_action_plan_june_2022_2.pdf
+outs:
+- md5: 5188dbbc5e9ce128975d950b569805ee
+  size: 423409
+  hash: md5
+  path: Wayland-MA.pdf

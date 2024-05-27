@@ -1,0 +1,12 @@
+md5: a0e0066e6eaa93868e1fad4202118b30
+frozen: true
+deps:
+- checksum: '" "'
+  size: 4192834
+  hash: md5
+  path: https://www.acton-ma.gov/DocumentCenter/View/7404/CAP-Blueprint
+outs:
+- md5: 2b0ea19f3c2913ea56bb6e24a25d3f43
+  size: 4192834
+  hash: md5
+  path: Acton-MA.pdf
