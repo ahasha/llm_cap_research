@@ -19,3 +19,13 @@ stages:
       - data/processed/Ashland-MA-strategies.csv
       - data/processed/Ashland-MA-actions.csv
       - data/processed/Ashland-MA.json
+  melrose:
+    cmd: llm_learning extract data/raw/Melrose-MA.pdf
+    deps:
+      - data/raw/Melrose-MA.pdf
+      - llm_learning/analyze.py
+    outs:
+      - data/processed/Melrose-MA-goals.csv
+      - data/processed/Melrose-MA-strategies.csv
+      - data/processed/Melrose-MA-actions.csv
+      - data/processed/Melrose-MA.json

@@ -1,3 +1,4 @@
+import json
 import logging
 import os
 from enum import Enum
@@ -83,7 +84,7 @@ class Strategy(BaseModel):
     related_goals: Optional[List[str]] = Field(
         description="A list of goal ids that this strategy is related to"
     )
-    description: str = Field(default=None, description="A description of the strategy")
+    description: str = Field(description="A description of the strategy")
     context: str = Field(
         description="Verbatim text from the provided document on which the Strategy description is based"
     )
@@ -265,9 +266,9 @@ def extract(
                     "results": result.dict(),
                 }
             )
-            json_output.str = json_output.dumps()
+            json_output_str = json.dumps(json_output)
             with open(json_path, "w") as f:
-                f.write(json_output.str)
+                f.write(json_output_str)
 
             goals_tables.append(results_to_goals_table(result, page, municipality))
             strategies_tables.append(
