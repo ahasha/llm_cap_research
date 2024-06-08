@@ -28,7 +28,7 @@ os.environ["LANGCHAIN_TRACING_V2"] = "true"
 app = typer.Typer()
 
 CONTEXT_WINDOW = {
-    "gpt-4o": 128000,
+    "gpt-4o": 2 * 4096,
     "gpt-3.5-turbo": 16000,
 }
 
@@ -72,7 +72,7 @@ class Goal(BaseModel):
     year: Optional[int] = Field(
         default=None,
         description="The year by which the goal should be achieved.",
-        ge=2024,
+        ge=1990,
         le=2100,
     )
     description: str = Field(
@@ -275,9 +275,14 @@ def parse_output(solution):
 def extract(
     pdf: Path,
     llm_model: Annotated[str, typer.Option()] = "gpt-3.5-turbo",
+    context_length: Annotated[int, typer.Option()] = 2 * 4096,
 ):
     if llm_model not in CONTEXT_WINDOW.keys():
         raise ValueError(f"Invalid LLM model: {llm_model}")
+    if context_length > CONTEXT_WINDOW[llm_model]:
+        raise ValueError(
+            f"Context length {context_length} exceeds maximum for model {llm_model}: {CONTEXT_WINDOW[llm_model]}"
+        )
     if not pdf.suffix == ".pdf":
         ValueError(f"File {pdf} is not a PDF file.")
     if not pdf.exists():
@@ -294,24 +299,25 @@ def extract(
 
     llm = ChatOpenAI(model=llm_model, temperature=0)
     prompt = get_prompt_template()
-    runnable_raw = (
-        prompt
-        | llm.with_structured_output(schema=Results, include_raw=True)
-        | check_output
-    )
-    fallback_chain = prompt | insert_errors | runnable_raw
-    N = 3  # Max re-tries
-    runnable_with_retry = runnable_raw.with_fallbacks(
-        fallbacks=[fallback_chain] * N, exception_key="error"
-    )
+    # runnable_raw = (
+    #     prompt
+    #     | llm.with_structured_output(schema=Results, include_raw=True)
+    #     | check_output
+    # )
+    # fallback_chain = prompt | insert_errors | runnable_raw
+    # N = 3  # Max re-tries
+    # runnable_with_retry = runnable_raw.with_fallbacks(
+    #     fallbacks=[fallback_chain] * N, exception_key="error"
+    # )
 
-    chain = runnable_with_retry | parse_output
+    # chain = runnable_with_retry | parse_output
+    chain = prompt | llm.with_structured_output(schema=Results)
 
     goals_tables = []
     actions_tables = []
     json_output = []
     tokens_processed = 0
-    for chunk in document_iterator(pdf, 0.8 * CONTEXT_WINDOW[llm_model], llm_model):
+    for chunk in document_iterator(pdf, context_length, llm_model):
         logger.info(
             f"Processing pages {chunk.metadata['first_page']} to {chunk.metadata['last_page']} from {chunk.metadata['source']}"
         )
@@ -344,9 +350,10 @@ def extract(
     actions_df = pd.concat(actions_tables)
 
     with Live() as live:
-        live.log_metric(f"{municipality}/goals_extracted", goals_df.shape[0])
-        live.log_metric(f"{municipality}/actions_extracted", actions_df.shape[0])
-        live.log_metric(f"{municipality}/doc_tokens_processed", tokens_processed)
+        muni_dir = municipality.replace(", ", "-")
+        live.log_metric(f"{muni_dir}/goals_extracted", goals_df.shape[0])
+        live.log_metric(f"{muni_dir}/actions_extracted", actions_df.shape[0])
+        live.log_metric(f"{muni_dir}/doc_tokens_processed", tokens_processed)
     logger.info("Writing goals to %s", goals_path)
     goals_df.to_csv(goals_path, index=False)
     logger.info("Writing actions to %s", actions_path)
