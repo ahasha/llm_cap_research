@@ -12,7 +12,6 @@ import typer
 from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.pydantic_v1 import BaseModel, Field
-from pydantic import ValidationError
 from typing_extensions import Annotated
 
 from dvclive import Live
@@ -323,40 +322,39 @@ def extract(
     actions_tables = []
     json_output = []
     tokens_processed = 0
-    for chunk in document_iterator(pdf, context_length, llm_model):
+
+    chunks = [chunk for chunk in document_iterator(pdf, context_length, llm_model)]
+    results = chain.batch(
+        [{"text": chunk.page_content} for chunk in chunks],
+        {"max_concurrency": 5},
+    )
+    for result, chunk in zip(results, chunks):
         logger.info(
             f"Processing pages {chunk.metadata['first_page']} to {chunk.metadata['last_page']} from {chunk.metadata['source']}"
         )
-        try:
-            try:
-                result = chain.invoke({"text": chunk.page_content})
-            except ValidationError as e:
-                logger.error(f"A validation error occurred: {str(e)}")
-                continue
+        # result = chain.invoke({"text": chunk.page_content})
 
-            json_output.append(
-                {
-                    "source": chunk.metadata["source"],
-                    "first_page": chunk.metadata["first_page"],
-                    "last_page": chunk.metadata["last_page"],
-                    "chunk_tokens": chunk.metadata["chunk_tokens"],
-                    "content": chunk.page_content,
-                    "municipality": municipality,
-                    "results": result.dict(),
-                }
-            )
-            tokens_processed += chunk.metadata["chunk_tokens"]
+        json_output.append(
+            {
+                "source": chunk.metadata["source"],
+                "first_page": chunk.metadata["first_page"],
+                "last_page": chunk.metadata["last_page"],
+                "chunk_tokens": chunk.metadata["chunk_tokens"],
+                "content": chunk.page_content,
+                "municipality": municipality,
+                "results": result.dict(),
+            }
+        )
+        tokens_processed += chunk.metadata["chunk_tokens"]
 
-            goals_tables.append(results_to_goals_table(result, chunk, municipality))
-            actions_tables.append(results_to_actions_table(result, chunk, municipality))
-        except Exception as e:
-            logger.error(f"An error occurred: {str(e)}")
+        goals_tables.append(results_to_goals_table(result, chunk, municipality))
+        actions_tables.append(results_to_actions_table(result, chunk, municipality))
 
     goals_df = pd.concat(goals_tables)
     actions_df = pd.concat(actions_tables)
 
-    with Live() as live:
-        muni_dir = municipality.replace(", ", "-")
+    muni_dir = municipality.replace(", ", "-")
+    with Live(f"metrics/{muni_dir}") as live:
         live.log_metric(f"{muni_dir}/goals_extracted", goals_df.shape[0])
         live.log_metric(f"{muni_dir}/actions_extracted", actions_df.shape[0])
         live.log_metric(f"{muni_dir}/doc_tokens_processed", tokens_processed)

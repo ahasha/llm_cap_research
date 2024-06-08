@@ -1,2 +1,2 @@
 llm_model: gpt-4o
-context_length: 8192
+context_length: 4096
