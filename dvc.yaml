@@ -34,10 +34,19 @@ stages:
       - data/processed/${item}.json
       - metrics/${item}/
 metrics:
-- metrics/Ashland-MA/metrics.json
 - metrics/Boston-MA/metrics.json
+- metrics/Acton-MA/metrics.json
+- metrics/Amherst-MA/metrics.json
+- metrics/Arlington-MA/metrics.json
+- metrics/Ashland-MA/metrics.json
 plots:
-- metrics/Ashland-MA/plots/metrics:
-    x: step
 - metrics/Boston-MA/plots/metrics:
+    x: step
+- metrics/Acton-MA/plots/metrics:
+    x: step
+- metrics/Amherst-MA/plots/metrics:
+    x: step
+- metrics/Arlington-MA/plots/metrics:
+    x: step
+- metrics/Ashland-MA/plots/metrics:
     x: step

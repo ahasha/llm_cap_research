@@ -326,7 +326,7 @@ def extract(
     chunks = [chunk for chunk in document_iterator(pdf, context_length, llm_model)]
     results = chain.batch(
         [{"text": chunk.page_content} for chunk in chunks],
-        {"max_concurrency": 5},
+        {"max_concurrency": 2},
     )
     for result, chunk in zip(results, chunks):
         logger.info(
