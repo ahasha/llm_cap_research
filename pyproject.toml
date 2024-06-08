@@ -121,6 +121,7 @@ sentence-transformers = "^3.0"
 torch = "<2.3.0"
 dvc-utils = {path = "../dvc_utils", develop = true}
 dvclive = "^3.46.0"
+pygit2 = "<1.15.0"
 
 [tool.poetry.group.pdfminer.dependencies]
 langchain-mistralai = "^0.1.7"

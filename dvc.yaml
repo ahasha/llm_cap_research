@@ -10,7 +10,7 @@ stages:
     - data/processed/Wayland-MA-goals.csv
     - data/processed/Wayland-MA-actions.csv
     - data/processed/Wayland-MA.json
-    - dvclive/
+    - dvclive/Wayland-MA
   ashland:
     cmd: llm_learning --llm-model ${llm_model} data/raw/Ashland-MA.pdf
     params:
@@ -22,7 +22,7 @@ stages:
     - data/processed/Ashland-MA-goals.csv
     - data/processed/Ashland-MA-actions.csv
     - data/processed/Ashland-MA.json
-    - dvclive/
+    - dvclive/metrics/Ashland-MA
   melrose:
     cmd: llm_learning --llm-model ${llm_model} data/raw/Melrose-MA.pdf
     params:
@@ -34,7 +34,7 @@ stages:
     - data/processed/Melrose-MA-goals.csv
     - data/processed/Melrose-MA-actions.csv
     - data/processed/Melrose-MA.json
-    - dvclive/
+    - dvclive/metrics/Melrose-MA
 metrics:
 - dvclive/metrics.json
 plots:
