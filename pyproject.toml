@@ -94,7 +94,7 @@ llm_learning = "llm_learning.analyze:app"
 [tool.poetry.dependencies]
 click = "^8.0.4"
 dvc = "^3.38.0"
-dvc-gs = "^3.0.1"
+dvc-gs = "^3.0"
 dvc-ssh = "^4.1.1"
 jupyter = "^1.0.0"
 matplotlib = "^3.7.1"
@@ -119,6 +119,8 @@ ruff = "^0.4.5"
 langsmith = "^0.1.63"
 sentence-transformers = "^3.0"
 torch = "<2.3.0"
+dvc-utils = {path = "../dvc_utils", develop = true}
+dvclive = "^3.46.0"
 
 [tool.poetry.group.pdfminer.dependencies]
 langchain-mistralai = "^0.1.7"

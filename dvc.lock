@@ -1,7 +1,7 @@
 schema: '2.0'
 stages:
   wayland:
-    cmd: llm_learning extract data/raw/Wayland-MA.pdf
+    cmd: llm_learning --llm-model gpt-3.5-turbo data/raw/Wayland-MA.pdf
     deps:
     - path: data/raw/Wayland-MA.pdf
       hash: md5
@@ -9,27 +9,26 @@ stages:
       size: 423409
     - path: llm_learning/analyze.py
       hash: md5
-      md5: 21f80ad0e500a7434312af836b573c4d
-      size: 10559
+      md5: 337a3764b6e5f8c28f8f465f30ca0f69
+      size: 10981
+    params:
+      params.yaml:
+        llm_model: gpt-3.5-turbo
     outs:
     - path: data/processed/Wayland-MA-actions.csv
       hash: md5
-      md5: ee4699e120240e66ba30050df6f87634
-      size: 15364
+      md5: 68b329da9893e34099c7d8ad5cb9c940
+      size: 1
     - path: data/processed/Wayland-MA-goals.csv
       hash: md5
-      md5: 1d540f8c53193ef945a33f874daa017c
-      size: 5179
-    - path: data/processed/Wayland-MA-strategies.csv
-      hash: md5
-      md5: 7a70b62bf4a6a68b0010ebc6619684df
-      size: 8896
+      md5: 76cb0ff9d9dc48ea9c857f2b4ade2ea5
+      size: 2951
     - path: data/processed/Wayland-MA.json
       hash: md5
-      md5: 999c628b8fed7aadd9b5d3b66fdd4883
-      size: 95176
+      md5: cf3e91d287eacfa574ec42b2948e36db
+      size: 63998
   ashland:
-    cmd: llm_learning extract data/raw/Ashland-MA.pdf
+    cmd: llm_learning --llm-model gpt-3.5-turbo data/raw/Ashland-MA.pdf
     deps:
     - path: data/raw/Ashland-MA.pdf
       hash: md5
@@ -37,27 +36,26 @@ stages:
       size: 3887273
     - path: llm_learning/analyze.py
       hash: md5
-      md5: 21f80ad0e500a7434312af836b573c4d
-      size: 10559
+      md5: 337a3764b6e5f8c28f8f465f30ca0f69
+      size: 10981
+    params:
+      params.yaml:
+        llm_model: gpt-3.5-turbo
     outs:
     - path: data/processed/Ashland-MA-actions.csv
       hash: md5
-      md5: 6bc8addb6745a7df7440e6245830a1fe
-      size: 3132
+      md5: 972d6f6181b2452a6f0174182a406fea
+      size: 1923
     - path: data/processed/Ashland-MA-goals.csv
       hash: md5
-      md5: 1bd637790ad0a03258d967901ca923a1
-      size: 9745
-    - path: data/processed/Ashland-MA-strategies.csv
-      hash: md5
-      md5: f1ce7476de651987e8a2612b2338bc7b
-      size: 17110
+      md5: 66e0b6e18ab269301b9acddf0e36a7f0
+      size: 820
     - path: data/processed/Ashland-MA.json
       hash: md5
-      md5: d49c3eacbfc949d7d27797b2280b5753
-      size: 67058
+      md5: b3d9eadebaa52a894cce2eee0f74769b
+      size: 30680
   melrose:
-    cmd: llm_learning extract data/raw/Melrose-MA.pdf
+    cmd: llm_learning --llm-model gpt-3.5-turbo data/raw/Melrose-MA.pdf
     deps:
     - path: data/raw/Melrose-MA.pdf
       hash: md5
@@ -65,22 +63,21 @@ stages:
       size: 29687022
     - path: llm_learning/analyze.py
       hash: md5
-      md5: 21f80ad0e500a7434312af836b573c4d
-      size: 10559
+      md5: 337a3764b6e5f8c28f8f465f30ca0f69
+      size: 10981
+    params:
+      params.yaml:
+        llm_model: gpt-3.5-turbo
     outs:
     - path: data/processed/Melrose-MA-actions.csv
       hash: md5
-      md5: 58bcbbd3e6d6fb648bf93356243d3101
-      size: 34378
+      md5: a74639354c63e9b565dd3709c8c0d3df
+      size: 1597
     - path: data/processed/Melrose-MA-goals.csv
       hash: md5
-      md5: 58097bd95f862f78655daf88559b398a
-      size: 10709
-    - path: data/processed/Melrose-MA-strategies.csv
-      hash: md5
-      md5: 8388abf8c85023bf1b4f1fc2620e45d4
-      size: 38612
+      md5: 69084eb2608fb33d59463ceb506ce780
+      size: 4374
     - path: data/processed/Melrose-MA.json
       hash: md5
-      md5: 71a319134e53ec9b20a5a92d08a19592
-      size: 197237
+      md5: f991601ee8f3043620bc690647795201
+      size: 111072
