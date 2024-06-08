@@ -40,25 +40,25 @@ stages:
     - dvclive/plots/metrics/Melrose-MA
   towns:
     foreach:
-      - Boston-MA
-      - Acton-MA
-      - Amherst-MA
-      - Arlington-MA
-      - Attleboro-MA
-      - Brookline-MA
-      - Burlington-VT
-      - Cambridge-MA
-      - Concord-MA
-      - Dedham-MA
-      - Gloucester-MA
-      - Harvard-MA
-      - Lincoln-MA
-      - Medford-MA
-      - Natick-MA
-      - Wellesley-MA
-      - Weston-MA
+    - Boston-MA
+    - Acton-MA
+    - Amherst-MA
+    - Arlington-MA
+    - Brookline-MA
+    - Burlington-VT
+    - Cambridge-MA
+    - Concord-MA
+    - Dedham-MA
+    - Gloucester-MA
+    - Harvard-MA
+    - Lincoln-MA
+    - Medford-MA
+    - Natick-MA
+    - Wellesley-MA
+    - Weston-MA
     do:
-      cmd: llm_learning --llm-model ${llm_model} --context-length ${context_length} data/raw/${item}.pdf
+      cmd: llm_learning --llm-model ${llm_model} --context-length ${context_length}
+        data/raw/${item}.pdf
       params:
       - llm_model
       deps:

@@ -96,3 +96,131 @@ stages:
       md5: f3003013e35377d2dbb3f2c0805ac495.dir
       size: 88
       nfiles: 3
+  towns@Boston-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 8192 data/raw/Boston-MA.pdf
+    deps:
+    - path: data/raw/Boston-MA.pdf
+      hash: md5
+      md5: 26fb53392fa6d63d492c44991674fe94
+      size: 59273615
+    - path: llm_learning/analyze.py
+      hash: md5
+      md5: 7cde50ab6a3113c0ae794697ac8a1307
+      size: 12982
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Boston-MA-actions.csv
+      hash: md5
+      md5: 80aceceab6e14d8e1952945ad36cc7ef
+      size: 26315
+    - path: data/processed/Boston-MA-goals.csv
+      hash: md5
+      md5: cadf8e88c62cff9a730d3933eb3f75d3
+      size: 7053
+    - path: data/processed/Boston-MA.json
+      hash: md5
+      md5: 882a69f03bffb0f4680bff9c03d3de02
+      size: 225765
+    - path: dvclive/plots/metrics/Boston-MA
+      hash: md5
+      md5: 10763f160d86e27fb69d458a05495b7d.dir
+      size: 88
+      nfiles: 3
+  towns@Acton-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 8192 data/raw/Acton-MA.pdf
+    deps:
+    - path: data/raw/Acton-MA.pdf
+      hash: md5
+      md5: 2b0ea19f3c2913ea56bb6e24a25d3f43
+      size: 4192834
+    - path: llm_learning/analyze.py
+      hash: md5
+      md5: 7cde50ab6a3113c0ae794697ac8a1307
+      size: 12982
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Acton-MA-actions.csv
+      hash: md5
+      md5: 9356dd13b3d975d00490f42476d071ce
+      size: 14594
+    - path: data/processed/Acton-MA-goals.csv
+      hash: md5
+      md5: 7c4b2959f96a7822c6cdbc11ee68d5d6
+      size: 1327
+    - path: data/processed/Acton-MA.json
+      hash: md5
+      md5: f88017eb7649469c0c04b2bd9365bb28
+      size: 86179
+    - path: dvclive/plots/metrics/Acton-MA
+      hash: md5
+      md5: 038fb9cd4a9ae790159adde0e4de1c35.dir
+      size: 87
+      nfiles: 3
+  towns@Amherst-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 8192 data/raw/Amherst-MA.pdf
+    deps:
+    - path: data/raw/Amherst-MA.pdf
+      hash: md5
+      md5: 64da848d2bed1b69ea450dc8c64a37b0
+      size: 46261699
+    - path: llm_learning/analyze.py
+      hash: md5
+      md5: 7cde50ab6a3113c0ae794697ac8a1307
+      size: 12982
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Amherst-MA-actions.csv
+      hash: md5
+      md5: a2d42c11f41b1517c01975aa8de26686
+      size: 54024
+    - path: data/processed/Amherst-MA-goals.csv
+      hash: md5
+      md5: ef62c7bb6b99721336de264a30783704
+      size: 12541
+    - path: data/processed/Amherst-MA.json
+      hash: md5
+      md5: e18898229ccf87b3cd01bda5887f2a7c
+      size: 336354
+    - path: dvclive/plots/metrics/Amherst-MA
+      hash: md5
+      md5: dc65e4073f71398e66ba49df9da00275.dir
+      size: 89
+      nfiles: 3
+  towns@Arlington-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 8192 data/raw/Arlington-MA.pdf
+    deps:
+    - path: data/raw/Arlington-MA.pdf
+      hash: md5
+      md5: 472e0ec896eeb10d68c8d1f56cc5f054
+      size: 1957199
+    - path: llm_learning/analyze.py
+      hash: md5
+      md5: 7cde50ab6a3113c0ae794697ac8a1307
+      size: 12982
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Arlington-MA-actions.csv
+      hash: md5
+      md5: 0690622b88e8188addaac4383ed04aac
+      size: 5314
+    - path: data/processed/Arlington-MA-goals.csv
+      hash: md5
+      md5: 0fa883cbfd0824ed9de3d27ed0198a3c
+      size: 2450
+    - path: data/processed/Arlington-MA.json
+      hash: md5
+      md5: 40f60758187677c3017a8c9eb9285efb
+      size: 93404
+    - path: dvclive/plots/metrics/Arlington-MA
+      hash: md5
+      md5: 87a90511704f1aa7210d0ab45a2e95f6.dir
+      size: 87
+      nfiles: 3

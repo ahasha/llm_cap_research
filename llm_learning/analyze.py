@@ -62,11 +62,12 @@ class Goal(BaseModel):
     document_goal_id: Optional[str] = Field(
         description="If a unique identifier for the Goal ID is given in the text record it here."
     )
-    action_category: ActionCategory = Field(
+    action_category: str = Field(
         description="""
         The Action Category the goal is associated with, e.g. Buildings, Transportation, Waste, Governance, Conservation, or Energy.
         Select Energy only if no other more specific emission category is mentioned, or if the goal pertains specifically to electricity.
         Governance is for goals related to municipal staffing, policies, or processes to support execution of the Climate Action Plan.
+        Should be a valid ActionCategory value: G, Z, B, E, T, W, C
         """
     )
     year: Optional[int] = Field(
@@ -89,11 +90,16 @@ class Goal(BaseModel):
 class Action(BaseModel):
     """Information about an action item described in the document."""
 
-    id: str = Field(
+    id: Optional[str] = Field(
         description="If a Unique Identifier for the action is given in the text, reecord it here."
     )
-    emissions_category: ActionCategory = Field(
-        description="The category of emissions the strategy is associated with"
+    action_category: str = Field(
+        description="""
+        The Action Category the goal is associated with, e.g. Buildings, Transportation, Waste, Governance, Conservation, or Energy.
+        Select Energy only if no other more specific emission category is mentioned, or if the goal pertains specifically to electricity.
+        Governance is for goals related to municipal staffing, policies, or processes to support execution of the Climate Action Plan.
+        Should be a valid ActionCategory value:
+        """
     )
     owner: Optional[List[str]] = Field(
         default=None,
