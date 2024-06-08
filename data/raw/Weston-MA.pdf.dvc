@@ -1,0 +1,13 @@
+md5: 55d4a8536ad4a7b6aad7cc388e6750ff
+frozen: true
+deps:
+- checksum: '" "'
+  size: 16306792
+  hash: md5
+  path: 
+    https://www.weston.org/DocumentCenter/View/29111/Climate-Action-and-Resilience-Plan---Weston-Ahead-PDF
+outs:
+- md5: 5928e9e90b9b9da9b244edab3e7856ad
+  size: 16306792
+  hash: md5
+  path: Weston-MA.pdf

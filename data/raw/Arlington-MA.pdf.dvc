@@ -1,0 +1,13 @@
+md5: 2cc3725d9d9422f1c824e725410c8301
+frozen: true
+deps:
+- checksum: '"1ddd4f-5cad1f7597816"'
+  size: 1957199
+  hash: md5
+  path: 
+    https://secureservercdn.net/50.62.195.83/env.320.myftpupload.com/wp-content/uploads/2021/08/Arlington_Net_Zero_Action_.pdf
+outs:
+- md5: 472e0ec896eeb10d68c8d1f56cc5f054
+  size: 1957199
+  hash: md5
+  path: Arlington-MA.pdf

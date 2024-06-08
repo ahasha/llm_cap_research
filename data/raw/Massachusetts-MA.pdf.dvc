@@ -1,0 +1,12 @@
+md5: 1f4c5af1901015ac221bc7a2bccd4636
+frozen: true
+deps:
+- checksum: '35979570925656301613940605002274460460'
+  size: 7325595
+  hash: md5
+  path: https://www.mass.gov/doc/massachusetts-priority-climate-action-plan/download
+outs:
+- md5: 45f56b08fbf528d5ef915b14e268383e
+  size: 7325595
+  hash: md5
+  path: Massachusetts-MA.pdf

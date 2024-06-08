@@ -1,0 +1,13 @@
+md5: 38660208af4e931698489e91708f0195
+frozen: true
+deps:
+- checksum: '"631f35b5-2a32eb"'
+  size: 2765547
+  hash: md5
+  path: 
+    https://www.burlingtonvt.gov/sites/default/files/CEDO/Sustainability/Climate%20Action%20Plan.pdf
+outs:
+- md5: 0af5eda4dc936a8a9e2bbd32841d1f0c
+  size: 2765547
+  hash: md5
+  path: Burlington-VT.pdf

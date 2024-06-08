@@ -1,0 +1,13 @@
+md5: 630d37b7ff079e03816061b170add373
+frozen: true
+deps:
+- checksum: '"7d9979f65e31281a38408658edce8178"'
+  size: 59911478
+  hash: md5
+  path: 
+    https://resources.finalsite.net/images/v1673478977/medfordmaorg/zuqdt3gqbn8wn7vufm6j/Medford_CAAP_April2022.pdf
+outs:
+- md5: 7d9979f65e31281a38408658edce8178
+  size: 59911478
+  hash: md5
+  path: Medford-MA.pdf

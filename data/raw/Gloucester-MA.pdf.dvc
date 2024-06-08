@@ -1,0 +1,13 @@
+md5: 22bc86d22d68afeb36ef7a5ed92efe26
+frozen: true
+deps:
+- checksum: '" "'
+  size: 17382652
+  hash: md5
+  path: 
+    https://gloucester-ma.gov/DocumentCenter/View/8813/2022-Gloucester-Climate-Action-and-Resilience-Plan-CARP_10-27-2022
+outs:
+- md5: 83cd0ab3c32e193402a087b196610f3f
+  size: 17382652
+  hash: md5
+  path: Gloucester-MA.pdf

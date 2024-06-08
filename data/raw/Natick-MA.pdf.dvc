@@ -1,0 +1,13 @@
+md5: d3a9a92360a8d64e1ef6e80e74aba72f
+frozen: true
+deps:
+- checksum: '"7fd795-5cad12378615e"'
+  size: 8378261
+  hash: md5
+  path: 
+    https://secureservercdn.net/50.62.195.83/env.320.myftpupload.com/wp-content/uploads/2021/08/NATICK_Final-Natick-Net-Zero-Action-Plan-2021-2025.pdf
+outs:
+- md5: 5c695287d6ca3f34624df246709be810
+  size: 8378261
+  hash: md5
+  path: Natick-MA.pdf

@@ -1,0 +1,13 @@
+md5: 7c5f8fae7f3f605e138516ea677612c3
+frozen: true
+deps:
+- checksum: '6976242052035985137422939675137132131'
+  size: 2587049
+  hash: md5
+  path: 
+    https://www.harvard-ma.gov/sites/g/files/vyhlif676/f/uploads/cap_12-11-2022_final_reduced_resolution.pdf
+outs:
+- md5: 974078a8921d627d9e34961a1479d713
+  size: 2587049
+  hash: md5
+  path: Harvard-MA.pdf

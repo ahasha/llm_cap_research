@@ -1,0 +1,13 @@
+md5: f0e67512d95b10e498c84a0aea97aaf1
+frozen: true
+deps:
+- checksum: '"46d55-5cb06e062b2a7"'
+  size: 290133
+  hash: md5
+  path: 
+    https://secureservercdn.net/50.62.195.83/env.320.myftpupload.com/wp-content/uploads/2021/09/Brookline_CAP_public_0202-2018_aug2018-v2.pdf
+outs:
+- md5: 8357a55c59a306b9add9a874c930b22c
+  size: 290133
+  hash: md5
+  path: Brookline-MA.pdf

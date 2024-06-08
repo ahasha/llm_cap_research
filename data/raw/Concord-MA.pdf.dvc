@@ -1,0 +1,13 @@
+md5: d5651f5970b6148a5857ae603c3154b4
+frozen: true
+deps:
+- checksum: '"6a5129-5cad1f5fff2a9"'
+  size: 6967593
+  hash: md5
+  path: 
+    https://secureservercdn.net/50.62.195.83/env.320.myftpupload.com/wp-content/uploads/2021/08/CONCORD_07_Concord_CAP_ONSCREEN_144_202009281000490383.pdf
+outs:
+- md5: 1f9dac8997dc6fcdc2dc64d00e0238a0
+  size: 6967593
+  hash: md5
+  path: Concord-MA.pdf

@@ -1,0 +1,12 @@
+md5: a7f6071e8575b9547930e6392b15604a
+frozen: true
+deps:
+- checksum: '" "'
+  size: 20927464
+  hash: md5
+  path: https://wellesleyma.gov/DocumentCenter/View/27281/Climate-Action-Plan
+outs:
+- md5: 9437f525d779e41db447d1475335f0d7
+  size: 20927464
+  hash: md5
+  path: Wellesley-MA.pdf

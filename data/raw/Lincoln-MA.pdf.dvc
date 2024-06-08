@@ -1,0 +1,13 @@
+md5: d847ac7e92291e4ccb564f92f12ae8a5
+frozen: true
+deps:
+- checksum: '" "'
+  size: 4561091
+  hash: md5
+  path: 
+    https://lincolntown.org/DocumentCenter/View/79157/Lincoln-Climate-Action-Plan_FINAL-DRAFT_06-30-2023
+outs:
+- md5: 068843d2565fdf518dbc66ca57826524
+  size: 4561091
+  hash: md5
+  path: Lincoln-MA.pdf

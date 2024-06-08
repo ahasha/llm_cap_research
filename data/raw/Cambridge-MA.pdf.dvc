@@ -1,0 +1,13 @@
+md5: 3cae8f51e733383e2a39694d5cde7092
+frozen: true
+deps:
+- checksum: '"86fb8-5cad1f405ed94"'
+  size: 552888
+  hash: md5
+  path: 
+    https://secureservercdn.net/50.62.195.83/env.320.myftpupload.com/wp-content/uploads/2021/08/CAMBRIDGE_cambridgenetzeroactionplanfy2020progressreport.pdf
+outs:
+- md5: a371b03ee0f669230cb5555289689998
+  size: 552888
+  hash: md5
+  path: Cambridge-MA.pdf
