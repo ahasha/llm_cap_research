@@ -27,7 +27,6 @@ stages:
       - llm_model
       deps:
       - data/raw/${item}.pdf
-      - llm_learning/analyze.py
       outs:
       - data/processed/${item}-goals.csv
       - data/processed/${item}-actions.csv

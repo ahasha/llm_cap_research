@@ -12,6 +12,7 @@ import typer
 from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.pydantic_v1 import BaseModel, Field
+from pydantic import ValidationError
 from typing_extensions import Annotated
 
 from dvclive import Live
@@ -251,7 +252,6 @@ def check_output(tool_output):
 
 
 def insert_errors(inputs):
-    breakpoint()
     """Insert errors for tool parsing in the messages"""
 
     # Get errors
@@ -274,6 +274,24 @@ def parse_output(solution):
     it will return a dict w 'raw', 'parsed', 'parsing_error'."""
 
     return solution["parsed"]
+
+
+def get_extraction_results_with_backoff(chain, text):
+    try:
+        result = chain.invoke({"text": text})
+    except ValidationError as e:
+        logger.error(f"A validation error occurred: {str(e)}")
+        logger.error("Retrying with content split in half")
+        # Split text in half and try twice...
+        first_half = text[: len(text) // 2]
+        second_half = text[len(text) // 2 :]
+        result1 = get_extraction_results_with_backoff(chain, first_half)
+        result2 = get_extraction_results_with_backoff(chain, second_half)
+        result = Results(
+            goals=result1.goals + result2.goals,
+            actions=result1.actions + result2.actions,
+        )
+    return result
 
 
 @app.command()
@@ -304,35 +322,18 @@ def extract(
 
     llm = ChatOpenAI(model=llm_model, temperature=0)
     prompt = get_prompt_template()
-    # runnable_raw = (
-    #     prompt
-    #     | llm.with_structured_output(schema=Results, include_raw=True)
-    #     | check_output
-    # )
-    # fallback_chain = prompt | insert_errors | runnable_raw
-    # N = 3  # Max re-tries
-    # runnable_with_retry = runnable_raw.with_fallbacks(
-    #     fallbacks=[fallback_chain] * N, exception_key="error"
-    # )
-
-    # chain = runnable_with_retry | parse_output
     chain = prompt | llm.with_structured_output(schema=Results)
 
     goals_tables = []
     actions_tables = []
     json_output = []
     tokens_processed = 0
-
-    chunks = [chunk for chunk in document_iterator(pdf, context_length, llm_model)]
-    results = chain.batch(
-        [{"text": chunk.page_content} for chunk in chunks],
-        {"max_concurrency": 2},
-    )
-    for result, chunk in zip(results, chunks):
+    for chunk in document_iterator(pdf, context_length, llm_model):
         logger.info(
             f"Processing pages {chunk.metadata['first_page']} to {chunk.metadata['last_page']} from {chunk.metadata['source']}"
         )
-        # result = chain.invoke({"text": chunk.page_content})
+
+        result = get_extraction_results_with_backoff(chain, chunk.page_content)
 
         json_output.append(
             {
