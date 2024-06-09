@@ -38,6 +38,10 @@ metrics:
 - metrics/Amherst-MA/metrics.json
 - metrics/Arlington-MA/metrics.json
 - metrics/Ashland-MA/metrics.json
+- metrics/Brookline-MA/metrics.json
+- metrics/Burlington-VT/metrics.json
+- metrics/Cambridge-MA/metrics.json
+- metrics/Concord-MA/metrics.json
 plots:
 - metrics/Boston-MA/plots/metrics:
     x: step
@@ -48,4 +52,12 @@ plots:
 - metrics/Arlington-MA/plots/metrics:
     x: step
 - metrics/Ashland-MA/plots/metrics:
+    x: step
+- metrics/Brookline-MA/plots/metrics:
+    x: step
+- metrics/Burlington-VT/plots/metrics:
+    x: step
+- metrics/Cambridge-MA/plots/metrics:
+    x: step
+- metrics/Concord-MA/plots/metrics:
     x: step

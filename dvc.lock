@@ -256,3 +256,115 @@ stages:
       md5: 7de643341ca175f9df7900484529a3d7.dir
       size: 216
       nfiles: 4
+  towns@Brookline-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Brookline-MA.pdf
+    deps:
+    - path: data/raw/Brookline-MA.pdf
+      hash: md5
+      md5: 8357a55c59a306b9add9a874c930b22c
+      size: 290133
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Brookline-MA-actions.csv
+      hash: md5
+      md5: 5d3850ec950a1a9752b74d8df667f3ac
+      size: 16785
+    - path: data/processed/Brookline-MA-goals.csv
+      hash: md5
+      md5: d9ab5f338f2d47aa1b4394f1cc0b867f
+      size: 511
+    - path: data/processed/Brookline-MA.json
+      hash: md5
+      md5: d72a54a5e7e89d3c94efd968f402460d
+      size: 57176
+    - path: metrics/Brookline-MA/
+      hash: md5
+      md5: 1ce60b3bbd284e7f23a460c3a366f1f7.dir
+      size: 218
+      nfiles: 4
+  towns@Burlington-VT:
+    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Burlington-VT.pdf
+    deps:
+    - path: data/raw/Burlington-VT.pdf
+      hash: md5
+      md5: 0af5eda4dc936a8a9e2bbd32841d1f0c
+      size: 2765547
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Burlington-VT-actions.csv
+      hash: md5
+      md5: 7ec933da8a08365fdc12b39214c6959b
+      size: 28554
+    - path: data/processed/Burlington-VT-goals.csv
+      hash: md5
+      md5: d3776648577e22b3f20b57d1044ac047
+      size: 2084
+    - path: data/processed/Burlington-VT.json
+      hash: md5
+      md5: 0283ceea43844677a9bf74d9fd4f7a31
+      size: 109490
+    - path: metrics/Burlington-VT/
+      hash: md5
+      md5: 1aa65e6941fe7a16b8d539e4c93514e5.dir
+      size: 221
+      nfiles: 4
+  towns@Cambridge-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Cambridge-MA.pdf
+    deps:
+    - path: data/raw/Cambridge-MA.pdf
+      hash: md5
+      md5: a371b03ee0f669230cb5555289689998
+      size: 552888
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Cambridge-MA-actions.csv
+      hash: md5
+      md5: 8c411938f5b3dcd76d96cf1b90fed263
+      size: 17896
+    - path: data/processed/Cambridge-MA-goals.csv
+      hash: md5
+      md5: 8c23169b2a61e01c59f480f54e7c25cc
+      size: 3432
+    - path: data/processed/Cambridge-MA.json
+      hash: md5
+      md5: 48f504dcc11e8f7e945e954f1b35d030
+      size: 113914
+    - path: metrics/Cambridge-MA/
+      hash: md5
+      md5: c992c6c63f1131dec75dcc978b0d0dfc.dir
+      size: 220
+      nfiles: 4
+  towns@Concord-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Concord-MA.pdf
+    deps:
+    - path: data/raw/Concord-MA.pdf
+      hash: md5
+      md5: 1f9dac8997dc6fcdc2dc64d00e0238a0
+      size: 6967593
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Concord-MA-actions.csv
+      hash: md5
+      md5: 6874a764dc75a22236e0b6dcf1851eb9
+      size: 63848
+    - path: data/processed/Concord-MA-goals.csv
+      hash: md5
+      md5: c49ab59e6bbbf29260f9cf47848040fd
+      size: 7201
+    - path: data/processed/Concord-MA.json
+      hash: md5
+      md5: e396af057496929bf45e510b2406127d
+      size: 265106
+    - path: metrics/Concord-MA/
+      hash: md5
+      md5: b5a7427efe4da3d6a12cf81f02366d17.dir
+      size: 222
+      nfiles: 4
