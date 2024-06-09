@@ -42,6 +42,15 @@ metrics:
 - metrics/Burlington-VT/metrics.json
 - metrics/Cambridge-MA/metrics.json
 - metrics/Concord-MA/metrics.json
+- metrics/Dedham-MA/metrics.json
+- metrics/Gloucester-MA/metrics.json
+- metrics/Harvard-MA/metrics.json
+- metrics/Lincoln-MA/metrics.json
+- metrics/Medford-MA/metrics.json
+- metrics/Melrose-MA/metrics.json
+- metrics/Natick-MA/metrics.json
+- metrics/Wayland-MA/metrics.json
+- metrics/Wellesley-MA/metrics.json
 plots:
 - metrics/Boston-MA/plots/metrics:
     x: step
@@ -60,4 +69,22 @@ plots:
 - metrics/Cambridge-MA/plots/metrics:
     x: step
 - metrics/Concord-MA/plots/metrics:
+    x: step
+- metrics/Dedham-MA/plots/metrics:
+    x: step
+- metrics/Gloucester-MA/plots/metrics:
+    x: step
+- metrics/Harvard-MA/plots/metrics:
+    x: step
+- metrics/Lincoln-MA/plots/metrics:
+    x: step
+- metrics/Medford-MA/plots/metrics:
+    x: step
+- metrics/Melrose-MA/plots/metrics:
+    x: step
+- metrics/Natick-MA/plots/metrics:
+    x: step
+- metrics/Wayland-MA/plots/metrics:
+    x: step
+- metrics/Wellesley-MA/plots/metrics:
     x: step

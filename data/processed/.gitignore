@@ -1,3 +1,5 @@
+*.csv
+*.json
 /Wayland-MA-goals.csv
 /Wayland-MA-strategies.csv
 /Wayland-MA-actions.csv

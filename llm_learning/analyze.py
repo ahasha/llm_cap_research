@@ -10,9 +10,9 @@ import pandas as pd
 import tiktoken
 import typer
 from langchain_core.documents import Document
+from langchain_core.exceptions import OutputParserException
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.pydantic_v1 import BaseModel, Field
-from pydantic import ValidationError
 from typing_extensions import Annotated
 
 from dvclive import Live
@@ -120,6 +120,9 @@ class Results(BaseModel):
 
 
 def results_to_goals_table(results, page, municipality):
+    if results.goals is None:
+        return None
+
     records = [
         {
             **g.dict(),
@@ -132,6 +135,9 @@ def results_to_goals_table(results, page, municipality):
 
 
 def results_to_actions_table(results, page, municipality):
+    if results.actions is None:
+        return None
+
     records = [
         {
             **a.dict(),
@@ -279,7 +285,7 @@ def parse_output(solution):
 def get_extraction_results_with_backoff(chain, text):
     try:
         result = chain.invoke({"text": text})
-    except ValidationError as e:
+    except OutputParserException as e:
         logger.error(f"A validation error occurred: {str(e)}")
         logger.error("Retrying with content split in half")
         # Split text in half and try twice...
@@ -348,8 +354,13 @@ def extract(
         )
         tokens_processed += chunk.metadata["chunk_tokens"]
 
-        goals_tables.append(results_to_goals_table(result, chunk, municipality))
-        actions_tables.append(results_to_actions_table(result, chunk, municipality))
+        goals_table = results_to_goals_table(result, chunk, municipality)
+        if goals_table is not None:
+            goals_tables.append(goals_table)
+
+        actions_table = results_to_actions_table(result, chunk, municipality)
+        if actions_table is not None:
+            actions_tables.append(actions_table)
 
     goals_df = pd.concat(goals_tables)
     actions_df = pd.concat(actions_tables)

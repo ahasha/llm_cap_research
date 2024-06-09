@@ -368,3 +368,255 @@ stages:
       md5: b5a7427efe4da3d6a12cf81f02366d17.dir
       size: 222
       nfiles: 4
+  towns@Dedham-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Dedham-MA.pdf
+    deps:
+    - path: data/raw/Dedham-MA.pdf
+      hash: md5
+      md5: 8360837309caeeddffa9092e8cce0098
+      size: 15886061
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Dedham-MA-actions.csv
+      hash: md5
+      md5: 107065259cb9dd7aa4d9861623888693
+      size: 88933
+    - path: data/processed/Dedham-MA-goals.csv
+      hash: md5
+      md5: a8f57453290bd7ccd4971ba64f84af48
+      size: 11569
+    - path: data/processed/Dedham-MA.json
+      hash: md5
+      md5: b9edab95944d3d9c5f1fb439f76993f2
+      size: 417706
+    - path: metrics/Dedham-MA/
+      hash: md5
+      md5: 1eafed596accfb8dff72b7b8b8e36e3a.dir
+      size: 221
+      nfiles: 4
+  towns@Gloucester-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Gloucester-MA.pdf
+    deps:
+    - path: data/raw/Gloucester-MA.pdf
+      hash: md5
+      md5: 83cd0ab3c32e193402a087b196610f3f
+      size: 17382652
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Gloucester-MA-actions.csv
+      hash: md5
+      md5: 84ab41e8181054b82ceea1179f76f564
+      size: 40294
+    - path: data/processed/Gloucester-MA-goals.csv
+      hash: md5
+      md5: 6e80c66d39c93194bf7e3fff6ebe02f0
+      size: 10417
+    - path: data/processed/Gloucester-MA.json
+      hash: md5
+      md5: 66edec6663bacc9fa8ed60b64c82e3ab
+      size: 229417
+    - path: metrics/Gloucester-MA/
+      hash: md5
+      md5: fc911babe387f41739710df6d243c8e1.dir
+      size: 223
+      nfiles: 4
+  towns@Harvard-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Harvard-MA.pdf
+    deps:
+    - path: data/raw/Harvard-MA.pdf
+      hash: md5
+      md5: 974078a8921d627d9e34961a1479d713
+      size: 2587049
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Harvard-MA-actions.csv
+      hash: md5
+      md5: c1a9e7aad0d3d8d8c0e307586169493c
+      size: 21790
+    - path: data/processed/Harvard-MA-goals.csv
+      hash: md5
+      md5: 6ddca768613447c79ca8c535c26796c9
+      size: 16369
+    - path: data/processed/Harvard-MA.json
+      hash: md5
+      md5: c5c084b384199e7c6592281ea44e2cc1
+      size: 139260
+    - path: metrics/Harvard-MA/
+      hash: md5
+      md5: e58767465008f4c02798d577a5d7787e.dir
+      size: 220
+      nfiles: 4
+  towns@Lincoln-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Lincoln-MA.pdf
+    deps:
+    - path: data/raw/Lincoln-MA.pdf
+      hash: md5
+      md5: 068843d2565fdf518dbc66ca57826524
+      size: 4561091
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Lincoln-MA-actions.csv
+      hash: md5
+      md5: 31eb04cbcd65eb57113ee57e90b5f37c
+      size: 59957
+    - path: data/processed/Lincoln-MA-goals.csv
+      hash: md5
+      md5: 9ca468cdba25c18d1b36bcd52023c7d9
+      size: 4595
+    - path: data/processed/Lincoln-MA.json
+      hash: md5
+      md5: 76b69935bebab6611458f79f6d98efa8
+      size: 239872
+    - path: metrics/Lincoln-MA/
+      hash: md5
+      md5: 9d6ec017a4e5409037321fb082ad4811.dir
+      size: 222
+      nfiles: 4
+  towns@Medford-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Medford-MA.pdf
+    deps:
+    - path: data/raw/Medford-MA.pdf
+      hash: md5
+      md5: 7d9979f65e31281a38408658edce8178
+      size: 59911478
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Medford-MA-actions.csv
+      hash: md5
+      md5: 7e0de5faf0a6c5b99666ae78cf84768b
+      size: 229176
+    - path: data/processed/Medford-MA-goals.csv
+      hash: md5
+      md5: 24cb843dcb398ea0b2ac9e6c6094d0a9
+      size: 27319
+    - path: data/processed/Medford-MA.json
+      hash: md5
+      md5: b81948e58abad7b08f245ed3aa73fc86
+      size: 882250
+    - path: metrics/Medford-MA/
+      hash: md5
+      md5: 30ef6760e0b9017b92686cce51939496.dir
+      size: 226
+      nfiles: 4
+  towns@Melrose-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Melrose-MA.pdf
+    deps:
+    - path: data/raw/Melrose-MA.pdf
+      hash: md5
+      md5: 07f15084c49aafe64d4f511c393f7e99
+      size: 29687022
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Melrose-MA-actions.csv
+      hash: md5
+      md5: 5e1f67f7e077f8706e8044cef290b46d
+      size: 29522
+    - path: data/processed/Melrose-MA-goals.csv
+      hash: md5
+      md5: 1ab5716ebeb8b9aae7c69af0ecc5de28
+      size: 11441
+    - path: data/processed/Melrose-MA.json
+      hash: md5
+      md5: ce887bab1c2cf851fb26465bf1f16a45
+      size: 159300
+    - path: metrics/Melrose-MA/
+      hash: md5
+      md5: 594fff958ff612d184581127c90a93e7.dir
+      size: 220
+      nfiles: 4
+  towns@Natick-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Natick-MA.pdf
+    deps:
+    - path: data/raw/Natick-MA.pdf
+      hash: md5
+      md5: 5c695287d6ca3f34624df246709be810
+      size: 8378261
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Natick-MA-actions.csv
+      hash: md5
+      md5: 9d9d90b7924bab8d28f850badd907aa7
+      size: 25550
+    - path: data/processed/Natick-MA-goals.csv
+      hash: md5
+      md5: b083fd9bf15d1033a90546979afd0d4f
+      size: 8030
+    - path: data/processed/Natick-MA.json
+      hash: md5
+      md5: 69aaf24e917f904da65a69cdbbd4ba74
+      size: 154923
+    - path: metrics/Natick-MA/
+      hash: md5
+      md5: 068b6f2f4717e909550060ce009feee9.dir
+      size: 219
+      nfiles: 4
+  towns@Wayland-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Wayland-MA.pdf
+    deps:
+    - path: data/raw/Wayland-MA.pdf
+      hash: md5
+      md5: 5188dbbc5e9ce128975d950b569805ee
+      size: 423409
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Wayland-MA-actions.csv
+      hash: md5
+      md5: c91fc4d3e1104d8543320159aa75a606
+      size: 27957
+    - path: data/processed/Wayland-MA-goals.csv
+      hash: md5
+      md5: 082bfa2839c10a9d810cc2b2c071a4e8
+      size: 4262
+    - path: data/processed/Wayland-MA.json
+      hash: md5
+      md5: 60a8dd1123b27787b26599baa7491a86
+      size: 105183
+    - path: metrics/Wayland-MA/
+      hash: md5
+      md5: 411e629b89b6d5745bb85c2365f987a7.dir
+      size: 220
+      nfiles: 4
+  towns@Wellesley-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Wellesley-MA.pdf
+    deps:
+    - path: data/raw/Wellesley-MA.pdf
+      hash: md5
+      md5: 9437f525d779e41db447d1475335f0d7
+      size: 20927464
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Wellesley-MA-actions.csv
+      hash: md5
+      md5: 633afc1975b14fcd0ec1bca7ece5f804
+      size: 27759
+    - path: data/processed/Wellesley-MA-goals.csv
+      hash: md5
+      md5: 0b45419eabaa5eec193b9e4d65e6411f
+      size: 7465
+    - path: data/processed/Wellesley-MA.json
+      hash: md5
+      md5: 53387b4d3f9018853000817eba842320
+      size: 141759
+    - path: metrics/Wellesley-MA/
+      hash: md5
+      md5: a34f2bff1cb16279b508d5543ca563b9.dir
+      size: 222
+      nfiles: 4
