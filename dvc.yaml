@@ -31,6 +31,7 @@ stages:
       - data/processed/${item}-goals.csv
       - data/processed/${item}-actions.csv
       - data/processed/${item}.json
+      - pipeline_logs/${item}.log
       - metrics/${item}/
 metrics:
 - metrics/Boston-MA/metrics.json
