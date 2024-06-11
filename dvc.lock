@@ -672,3 +672,35 @@ stages:
       hash: md5
       md5: 77db5c934a919c2cf0f6e8a900a7af5e
       size: 135122
+  towns@Weston-MA:
+    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Weston-MA.pdf
+    deps:
+    - path: data/raw/Weston-MA.pdf
+      hash: md5
+      md5: 5928e9e90b9b9da9b244edab3e7856ad
+      size: 16306792
+    params:
+      params.yaml:
+        llm_model: gpt-4o
+    outs:
+    - path: data/processed/Weston-MA-actions.csv
+      hash: md5
+      md5: f35aa2681810d54f1b457019b2339e0e
+      size: 69412
+    - path: data/processed/Weston-MA-goals.csv
+      hash: md5
+      md5: 1c5db1973b20ca167a761bd20bf7a579
+      size: 22422
+    - path: data/processed/Weston-MA.json
+      hash: md5
+      md5: f42d16f4d6628cade3d1621f218f7262
+      size: 363792
+    - path: metrics/Weston-MA/
+      hash: md5
+      md5: 561d0947c6bbbfd880725d1ad640ae73.dir
+      size: 221
+      nfiles: 4
+    - path: pipeline_logs/Weston-MA.log
+      hash: md5
+      md5: 4b05f6e79dc7c8d4887b72b256738497
+      size: 320474

@@ -52,6 +52,7 @@ metrics:
 - metrics/Natick-MA/metrics.json
 - metrics/Wayland-MA/metrics.json
 - metrics/Wellesley-MA/metrics.json
+- metrics/Weston-MA/metrics.json
 plots:
 - metrics/Boston-MA/plots/metrics:
     x: step
@@ -88,4 +89,6 @@ plots:
 - metrics/Wayland-MA/plots/metrics:
     x: step
 - metrics/Wellesley-MA/plots/metrics:
+    x: step
+- metrics/Weston-MA/plots/metrics:
     x: step
