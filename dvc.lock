@@ -704,3 +704,25 @@ stages:
       hash: md5
       md5: 4b05f6e79dc7c8d4887b72b256738497
       size: 320474
+  consolidate_tables:
+    cmd: poetry run python llm_learning/consolidate_tables.py data/interim/ data/raw/
+    deps:
+    - path: data/interim/
+      hash: md5
+      md5: 6e6470bd3f0ab52661cf3a2a74518bc2.dir
+      size: 5572265
+      nfiles: 59
+    - path: data/raw/
+      hash: md5
+      md5: e67319a6c4192b9f8416bddb372ca247.dir
+      size: 309617733
+      nfiles: 43
+    outs:
+    - path: data/processed/consolidated_actions.csv
+      hash: md5
+      md5: 5370817e8af0e681228e9ca6ac8320ad
+      size: 1173533
+    - path: data/processed/consolidated_goals.csv
+      hash: md5
+      md5: 94fbb9ac4f0f0d9ec4bb32dea05af54f
+      size: 225568

@@ -34,11 +34,10 @@ stages:
       - pipeline_logs/${item}.log
       - metrics/${item}/
   consolidate_tables:
-    cmd: python llm_learning/consolidate_tables.py data/processed/ data/raw/
+    cmd: poetry run python llm_learning/consolidate_tables.py data/interim/ data/raw/
     deps:
-    - data/processed/*-goals.csv
-    - data/processed/*-actions.csv
-    - data/raw/*.pdf
+    - data/interim/
+    - data/raw/
     outs:
     - data/processed/consolidated_goals.csv
     - data/processed/consolidated_actions.csv
