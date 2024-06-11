@@ -1,25 +1,25 @@
 stages:
   towns:
     foreach:
-    - Boston-MA
-    - Acton-MA
-    - Amherst-MA
-    - Arlington-MA
-    - Ashland-MA
-    - Brookline-MA
-    - Burlington-VT
-    - Cambridge-MA
-    - Concord-MA
-    - Dedham-MA
-    - Gloucester-MA
-    - Harvard-MA
-    - Lincoln-MA
-    - Medford-MA
-    - Melrose-MA
-    - Natick-MA
-    - Wayland-MA
-    - Wellesley-MA
-    - Weston-MA
+        - Boston-MA
+        - Acton-MA
+        - Amherst-MA
+        - Arlington-MA
+        - Ashland-MA
+        - Brookline-MA
+        - Burlington-VT
+        - Cambridge-MA
+        - Concord-MA
+        - Dedham-MA
+        - Gloucester-MA
+        - Harvard-MA
+        - Lincoln-MA
+        - Medford-MA
+        - Melrose-MA
+        - Natick-MA
+        - Wayland-MA
+        - Wellesley-MA
+        - Weston-MA
     do:
       cmd: llm_learning --llm-model ${llm_model} --context-length ${context_length}
         data/raw/${item}.pdf
@@ -28,11 +28,20 @@ stages:
       deps:
       - data/raw/${item}.pdf
       outs:
-      - data/processed/${item}-goals.csv
-      - data/processed/${item}-actions.csv
-      - data/processed/${item}.json
+      - data/interim/${item}-goals.csv
+      - data/interim/${item}-actions.csv
+      - data/interim/${item}.json
       - pipeline_logs/${item}.log
       - metrics/${item}/
+  consolidate_tables:
+    cmd: python llm_learning/consolidate_tables.py data/processed/ data/raw/
+    deps:
+    - data/processed/*-goals.csv
+    - data/processed/*-actions.csv
+    - data/raw/*.pdf
+    outs:
+    - data/processed/consolidated_goals.csv
+    - data/processed/consolidated_actions.csv
 metrics:
 - metrics/Boston-MA/metrics.json
 - metrics/Acton-MA/metrics.json
@@ -92,3 +101,4 @@ plots:
     x: step
 - metrics/Weston-MA/plots/metrics:
     x: step
+

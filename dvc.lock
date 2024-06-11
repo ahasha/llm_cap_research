@@ -107,15 +107,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Boston-MA-actions.csv
+    - path: data/interim/Boston-MA-actions.csv
       hash: md5
       md5: 79ca687aed88ef783a3c66bcafed9a9c
       size: 51866
-    - path: data/processed/Boston-MA-goals.csv
+    - path: data/interim/Boston-MA-goals.csv
       hash: md5
       md5: 7381f7bc583d3b8aabaa7719a071ce59
       size: 9123
-    - path: data/processed/Boston-MA.json
+    - path: data/interim/Boston-MA.json
       hash: md5
       md5: 4ab7896e21a81e9248fd772da40e2bf0
       size: 264319
@@ -139,15 +139,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Acton-MA-actions.csv
+    - path: data/interim/Acton-MA-actions.csv
       hash: md5
       md5: 5ded05febaf630b22c215c5de0e7f126
       size: 29656
-    - path: data/processed/Acton-MA-goals.csv
+    - path: data/interim/Acton-MA-goals.csv
       hash: md5
       md5: 572e35b743bdcb8a117d84366170cad4
       size: 5350
-    - path: data/processed/Acton-MA.json
+    - path: data/interim/Acton-MA.json
       hash: md5
       md5: 95265b4f080d53095ca1504b2ed10286
       size: 151824
@@ -171,15 +171,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Amherst-MA-actions.csv
+    - path: data/interim/Amherst-MA-actions.csv
       hash: md5
       md5: 64ee9d297ec6805ea674071d63c55a37
       size: 81238
-    - path: data/processed/Amherst-MA-goals.csv
+    - path: data/interim/Amherst-MA-goals.csv
       hash: md5
       md5: bc0df004bcdc109da80dbc3a0278d94b
       size: 15322
-    - path: data/processed/Amherst-MA.json
+    - path: data/interim/Amherst-MA.json
       hash: md5
       md5: 0f5104f8d97153cc7a8b2487f0e9ac88
       size: 417438
@@ -203,15 +203,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Arlington-MA-actions.csv
+    - path: data/interim/Arlington-MA-actions.csv
       hash: md5
       md5: c0b51001e15a0027668cf9b2fb3070dd
       size: 36812
-    - path: data/processed/Arlington-MA-goals.csv
+    - path: data/interim/Arlington-MA-goals.csv
       hash: md5
       md5: 9e0aae13f417685363418518c26182b0
       size: 5605
-    - path: data/processed/Arlington-MA.json
+    - path: data/interim/Arlington-MA.json
       hash: md5
       md5: 64be35c0b9309ffcb6596a1eeca67d25
       size: 181006
@@ -235,15 +235,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Ashland-MA-actions.csv
+    - path: data/interim/Ashland-MA-actions.csv
       hash: md5
       md5: 77f11369f6631b5a18526763f6caa7bd
       size: 12762
-    - path: data/processed/Ashland-MA-goals.csv
+    - path: data/interim/Ashland-MA-goals.csv
       hash: md5
       md5: 976c2379bad24db7c129ffcfd81278fe
       size: 264
-    - path: data/processed/Ashland-MA.json
+    - path: data/interim/Ashland-MA.json
       hash: md5
       md5: 52f9fa0713aad1fcbe4f2513a66b2313
       size: 44761
@@ -267,15 +267,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Brookline-MA-actions.csv
+    - path: data/interim/Brookline-MA-actions.csv
       hash: md5
       md5: 5d3850ec950a1a9752b74d8df667f3ac
       size: 16785
-    - path: data/processed/Brookline-MA-goals.csv
+    - path: data/interim/Brookline-MA-goals.csv
       hash: md5
       md5: d9ab5f338f2d47aa1b4394f1cc0b867f
       size: 511
-    - path: data/processed/Brookline-MA.json
+    - path: data/interim/Brookline-MA.json
       hash: md5
       md5: d72a54a5e7e89d3c94efd968f402460d
       size: 57176
@@ -299,15 +299,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Burlington-VT-actions.csv
+    - path: data/interim/Burlington-VT-actions.csv
       hash: md5
       md5: 7ec933da8a08365fdc12b39214c6959b
       size: 28554
-    - path: data/processed/Burlington-VT-goals.csv
+    - path: data/interim/Burlington-VT-goals.csv
       hash: md5
       md5: d3776648577e22b3f20b57d1044ac047
       size: 2084
-    - path: data/processed/Burlington-VT.json
+    - path: data/interim/Burlington-VT.json
       hash: md5
       md5: 0283ceea43844677a9bf74d9fd4f7a31
       size: 109490
@@ -331,15 +331,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Cambridge-MA-actions.csv
+    - path: data/interim/Cambridge-MA-actions.csv
       hash: md5
       md5: 8c411938f5b3dcd76d96cf1b90fed263
       size: 17896
-    - path: data/processed/Cambridge-MA-goals.csv
+    - path: data/interim/Cambridge-MA-goals.csv
       hash: md5
       md5: 8c23169b2a61e01c59f480f54e7c25cc
       size: 3432
-    - path: data/processed/Cambridge-MA.json
+    - path: data/interim/Cambridge-MA.json
       hash: md5
       md5: 48f504dcc11e8f7e945e954f1b35d030
       size: 113914
@@ -363,15 +363,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Concord-MA-actions.csv
+    - path: data/interim/Concord-MA-actions.csv
       hash: md5
       md5: 6874a764dc75a22236e0b6dcf1851eb9
       size: 63848
-    - path: data/processed/Concord-MA-goals.csv
+    - path: data/interim/Concord-MA-goals.csv
       hash: md5
       md5: c49ab59e6bbbf29260f9cf47848040fd
       size: 7201
-    - path: data/processed/Concord-MA.json
+    - path: data/interim/Concord-MA.json
       hash: md5
       md5: e396af057496929bf45e510b2406127d
       size: 265106
@@ -395,15 +395,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Dedham-MA-actions.csv
+    - path: data/interim/Dedham-MA-actions.csv
       hash: md5
       md5: 107065259cb9dd7aa4d9861623888693
       size: 88933
-    - path: data/processed/Dedham-MA-goals.csv
+    - path: data/interim/Dedham-MA-goals.csv
       hash: md5
       md5: a8f57453290bd7ccd4971ba64f84af48
       size: 11569
-    - path: data/processed/Dedham-MA.json
+    - path: data/interim/Dedham-MA.json
       hash: md5
       md5: b9edab95944d3d9c5f1fb439f76993f2
       size: 417706
@@ -427,15 +427,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Gloucester-MA-actions.csv
+    - path: data/interim/Gloucester-MA-actions.csv
       hash: md5
       md5: 84ab41e8181054b82ceea1179f76f564
       size: 40294
-    - path: data/processed/Gloucester-MA-goals.csv
+    - path: data/interim/Gloucester-MA-goals.csv
       hash: md5
       md5: 6e80c66d39c93194bf7e3fff6ebe02f0
       size: 10417
-    - path: data/processed/Gloucester-MA.json
+    - path: data/interim/Gloucester-MA.json
       hash: md5
       md5: 66edec6663bacc9fa8ed60b64c82e3ab
       size: 229417
@@ -459,15 +459,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Harvard-MA-actions.csv
+    - path: data/interim/Harvard-MA-actions.csv
       hash: md5
       md5: c1a9e7aad0d3d8d8c0e307586169493c
       size: 21790
-    - path: data/processed/Harvard-MA-goals.csv
+    - path: data/interim/Harvard-MA-goals.csv
       hash: md5
       md5: 6ddca768613447c79ca8c535c26796c9
       size: 16369
-    - path: data/processed/Harvard-MA.json
+    - path: data/interim/Harvard-MA.json
       hash: md5
       md5: c5c084b384199e7c6592281ea44e2cc1
       size: 139260
@@ -491,15 +491,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Lincoln-MA-actions.csv
+    - path: data/interim/Lincoln-MA-actions.csv
       hash: md5
       md5: 31eb04cbcd65eb57113ee57e90b5f37c
       size: 59957
-    - path: data/processed/Lincoln-MA-goals.csv
+    - path: data/interim/Lincoln-MA-goals.csv
       hash: md5
       md5: 9ca468cdba25c18d1b36bcd52023c7d9
       size: 4595
-    - path: data/processed/Lincoln-MA.json
+    - path: data/interim/Lincoln-MA.json
       hash: md5
       md5: 76b69935bebab6611458f79f6d98efa8
       size: 239872
@@ -523,15 +523,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Medford-MA-actions.csv
+    - path: data/interim/Medford-MA-actions.csv
       hash: md5
       md5: 7e0de5faf0a6c5b99666ae78cf84768b
       size: 229176
-    - path: data/processed/Medford-MA-goals.csv
+    - path: data/interim/Medford-MA-goals.csv
       hash: md5
       md5: 24cb843dcb398ea0b2ac9e6c6094d0a9
       size: 27319
-    - path: data/processed/Medford-MA.json
+    - path: data/interim/Medford-MA.json
       hash: md5
       md5: b81948e58abad7b08f245ed3aa73fc86
       size: 882250
@@ -555,15 +555,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Melrose-MA-actions.csv
+    - path: data/interim/Melrose-MA-actions.csv
       hash: md5
       md5: 5e1f67f7e077f8706e8044cef290b46d
       size: 29522
-    - path: data/processed/Melrose-MA-goals.csv
+    - path: data/interim/Melrose-MA-goals.csv
       hash: md5
       md5: 1ab5716ebeb8b9aae7c69af0ecc5de28
       size: 11441
-    - path: data/processed/Melrose-MA.json
+    - path: data/interim/Melrose-MA.json
       hash: md5
       md5: ce887bab1c2cf851fb26465bf1f16a45
       size: 159300
@@ -587,15 +587,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Natick-MA-actions.csv
+    - path: data/interim/Natick-MA-actions.csv
       hash: md5
       md5: 9d9d90b7924bab8d28f850badd907aa7
       size: 25550
-    - path: data/processed/Natick-MA-goals.csv
+    - path: data/interim/Natick-MA-goals.csv
       hash: md5
       md5: b083fd9bf15d1033a90546979afd0d4f
       size: 8030
-    - path: data/processed/Natick-MA.json
+    - path: data/interim/Natick-MA.json
       hash: md5
       md5: 69aaf24e917f904da65a69cdbbd4ba74
       size: 154923
@@ -619,15 +619,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Wayland-MA-actions.csv
+    - path: data/interim/Wayland-MA-actions.csv
       hash: md5
       md5: c91fc4d3e1104d8543320159aa75a606
       size: 27957
-    - path: data/processed/Wayland-MA-goals.csv
+    - path: data/interim/Wayland-MA-goals.csv
       hash: md5
       md5: 082bfa2839c10a9d810cc2b2c071a4e8
       size: 4262
-    - path: data/processed/Wayland-MA.json
+    - path: data/interim/Wayland-MA.json
       hash: md5
       md5: 60a8dd1123b27787b26599baa7491a86
       size: 105183
@@ -651,15 +651,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Wellesley-MA-actions.csv
+    - path: data/interim/Wellesley-MA-actions.csv
       hash: md5
       md5: 633afc1975b14fcd0ec1bca7ece5f804
       size: 27759
-    - path: data/processed/Wellesley-MA-goals.csv
+    - path: data/interim/Wellesley-MA-goals.csv
       hash: md5
       md5: 0b45419eabaa5eec193b9e4d65e6411f
       size: 7465
-    - path: data/processed/Wellesley-MA.json
+    - path: data/interim/Wellesley-MA.json
       hash: md5
       md5: 53387b4d3f9018853000817eba842320
       size: 141759
@@ -683,15 +683,15 @@ stages:
       params.yaml:
         llm_model: gpt-4o
     outs:
-    - path: data/processed/Weston-MA-actions.csv
+    - path: data/interim/Weston-MA-actions.csv
       hash: md5
       md5: f35aa2681810d54f1b457019b2339e0e
       size: 69412
-    - path: data/processed/Weston-MA-goals.csv
+    - path: data/interim/Weston-MA-goals.csv
       hash: md5
       md5: 1c5db1973b20ca167a761bd20bf7a579
       size: 22422
-    - path: data/processed/Weston-MA.json
+    - path: data/interim/Weston-MA.json
       hash: md5
       md5: f42d16f4d6628cade3d1621f218f7262
       size: 363792

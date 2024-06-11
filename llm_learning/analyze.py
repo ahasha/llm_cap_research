@@ -16,6 +16,7 @@ from langchain_core.pydantic_v1 import BaseModel, Field
 from typing_extensions import Annotated
 
 from dvclive import Live
+from llm_learning.consolidate_tables import consolidate_tables
 from llm_learning.logging_config import configure_logging
 
 logger = logging.getLogger(__name__)
@@ -26,6 +27,8 @@ os.environ["LANGCHAIN_TRACING_V2"] = "true"
 # NOTE: langsmith auto-tracing requires LANGCHAIN_API_KEY set in .env
 
 app = typer.Typer()
+
+app.command(consolidate_tables)
 
 CONTEXT_WINDOW = {
     "gpt-4o": 2 * 4096,
