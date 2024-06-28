@@ -173,9 +173,11 @@ def document_iterator(pdf: Path, max_tokens: int, model: str) -> Iterator[Docume
     chunk_tokens = 0
     for page in pages:
         page_number = int(page.metadata["page"])
+        # Include page number separators in the content so the LLM can report which page the extracted itemms are from.
         new_content = f"PAGE {page_number}\n\n{page.page_content}"
         _full_doc_content = full_document_content + "\n\n" + new_content
         expanded_chunk_tokens = count_tokens(_full_doc_content, tokenizer)
+
         if expanded_chunk_tokens > max_tokens:
             # Adding this page would take you over the token limit, so yield the current chunk.
             document = Document(
