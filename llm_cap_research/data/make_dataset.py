@@ -7,8 +7,9 @@ import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
 import yaml
-from llm_learning.logging_config import configure_logging
 from sqlalchemy.engine.base import Connection
+
+from llm_cap_research.logging_config import configure_logging
 
 logger = logging.getLogger("make_dataset")
 
@@ -51,7 +52,7 @@ def dbt_profile_settings(
     with open(profiles_path, "r") as f:
         profiles = yaml.safe_load(f)
 
-    dbt_config = profiles["{dbt_raw_data_for_llm_learning"]["outputs"][target]
+    dbt_config = profiles["{dbt_raw_data_for_llm_cap_research"]["outputs"][target]
     return dbt_config
 
 

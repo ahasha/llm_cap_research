@@ -21,7 +21,7 @@ stages:
         - Wellesley-MA
         - Weston-MA
     do:
-      cmd: llm_learning --llm-model ${llm_model} --context-length ${context_length}
+      cmd: llm_cap_research --llm-model ${llm_model} --context-length ${context_length}
         data/raw/${item}.pdf
       params:
       - llm_model
@@ -34,7 +34,7 @@ stages:
       - pipeline_logs/${item}.log
       - metrics/${item}/
   consolidate_tables:
-    cmd: poetry run python llm_learning/consolidate_tables.py data/interim/ data/raw/
+    cmd: poetry run python llm_cap_research/consolidate_tables.py data/interim/ data/raw/
     deps:
     - data/interim/
     - data/raw/

@@ -5,4 +5,4 @@
 [cache]
     type = "reflink,hardlink"
 ['remote "origin"']
-    url = gs://hasha-ds-portfolio-projects/llm_learnings/
+    url = gs://hasha-ds-portfolio-projects/llm_cap_research/

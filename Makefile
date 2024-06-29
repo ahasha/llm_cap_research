@@ -6,7 +6,7 @@ PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 POETRY := $(shell command -v poetry 2> /dev/null)
 POETRY_ENV_DIR := $(shell $(POETRY) env info -p)
 POETRY_RUN := $(POETRY) run
-PROJECT_NAME = llm_learning
+PROJECT_NAME = llm_cap_research
 PYTHON_VERSION = 3.11
 SHELL := /bin/bash
 
@@ -58,12 +58,12 @@ clean: ## Delete all compiled Python files
 
 .PHONY: lint
 lint: check_poetry ## Lint using flake8 and brunette (use `make format` to do formatting)
-	$(POETRY_RUN) flake8 llm_learning
-	$(POETRY_RUN) brunette --check --config pyproject.toml llm_learning
+	$(POETRY_RUN) flake8 llm_cap_research
+	$(POETRY_RUN) brunette --check --config pyproject.toml llm_cap_research
 
 .PHONY: format
 format: check_poetry ## Format source code with brunette
-	$(POETRY_RUN) brunette --config pyproject.toml llm_learning
+	$(POETRY_RUN) brunette --config pyproject.toml llm_cap_research
 
 
 #################################################################################
@@ -72,7 +72,7 @@ format: check_poetry ## Format source code with brunette
 
 .PHONY: docs
 docs: check_poetry clean-docs  ## Build all project documentation
-	$(POETRY_RUN) sphinx-apidoc -o docs/ llm_learning
+	$(POETRY_RUN) sphinx-apidoc -o docs/ llm_cap_research
 	$(POETRY_RUN) $(MAKE) -C docs clean
 	$(POETRY_RUN) $(MAKE) -C docs html
 
@@ -80,7 +80,7 @@ docs: check_poetry clean-docs  ## Build all project documentation
 
 .PHONY: clean-docs
 clean-docs: ## Remove auto-generated document elements
-	rm -f docs/llm_learning.rst || \
+	rm -f docs/llm_cap_research.rst || \
 	rm -f docs/modules.rst || true
 
 .PHONY: start-doc-server stop-doc-server

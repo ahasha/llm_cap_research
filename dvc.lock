@@ -1,13 +1,13 @@
 schema: '2.0'
 stages:
   wayland:
-    cmd: llm_learning --llm-model gpt-4o --context-length 8192 data/raw/Wayland-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 8192 data/raw/Wayland-MA.pdf
     deps:
     - path: data/raw/Wayland-MA.pdf
       hash: md5
       md5: 5188dbbc5e9ce128975d950b569805ee
       size: 423409
-    - path: llm_learning/analyze.py
+    - path: llm_cap_research/analyze.py
       hash: md5
       md5: 7cde50ab6a3113c0ae794697ac8a1307
       size: 12982
@@ -33,13 +33,13 @@ stages:
       size: 88
       nfiles: 3
   ashland:
-    cmd: llm_learning --llm-model gpt-4o --context-length 8192 data/raw/Ashland-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 8192 data/raw/Ashland-MA.pdf
     deps:
     - path: data/raw/Ashland-MA.pdf
       hash: md5
       md5: 5653c2456f4e019c994cb67786cf87c2
       size: 3887273
-    - path: llm_learning/analyze.py
+    - path: llm_cap_research/analyze.py
       hash: md5
       md5: 7cde50ab6a3113c0ae794697ac8a1307
       size: 12982
@@ -65,13 +65,13 @@ stages:
       size: 86
       nfiles: 3
   melrose:
-    cmd: llm_learning --llm-model gpt-4o --context-length 8192 data/raw/Melrose-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 8192 data/raw/Melrose-MA.pdf
     deps:
     - path: data/raw/Melrose-MA.pdf
       hash: md5
       md5: 07f15084c49aafe64d4f511c393f7e99
       size: 29687022
-    - path: llm_learning/analyze.py
+    - path: llm_cap_research/analyze.py
       hash: md5
       md5: 7cde50ab6a3113c0ae794697ac8a1307
       size: 12982
@@ -97,7 +97,7 @@ stages:
       size: 88
       nfiles: 3
   towns@Boston-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Boston-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Boston-MA.pdf
     deps:
     - path: data/raw/Boston-MA.pdf
       hash: md5
@@ -129,7 +129,7 @@ stages:
       md5: 452668463e959818a098f458c09eb4a3
       size: 733364
   towns@Acton-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Acton-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Acton-MA.pdf
     deps:
     - path: data/raw/Acton-MA.pdf
       hash: md5
@@ -161,7 +161,7 @@ stages:
       md5: cf08e2847bc68b591ba71cad60981ae9
       size: 285782
   towns@Amherst-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Amherst-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Amherst-MA.pdf
     deps:
     - path: data/raw/Amherst-MA.pdf
       hash: md5
@@ -193,7 +193,7 @@ stages:
       md5: be59abb95f2fe4050ba34c77e30b4611
       size: 1346152
   towns@Arlington-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Arlington-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Arlington-MA.pdf
     deps:
     - path: data/raw/Arlington-MA.pdf
       hash: md5
@@ -225,7 +225,7 @@ stages:
       md5: e51d9c8107e145042d78b4217d4e392c
       size: 336494
   towns@Ashland-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Ashland-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Ashland-MA.pdf
     deps:
     - path: data/raw/Ashland-MA.pdf
       hash: md5
@@ -257,7 +257,7 @@ stages:
       md5: e3ea863edfe77249805ee73a3315e48c
       size: 726420
   towns@Brookline-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Brookline-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Brookline-MA.pdf
     deps:
     - path: data/raw/Brookline-MA.pdf
       hash: md5
@@ -289,7 +289,7 @@ stages:
       md5: a5ba6f55690e11700e798ded1f983d77
       size: 99898
   towns@Burlington-VT:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Burlington-VT.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Burlington-VT.pdf
     deps:
     - path: data/raw/Burlington-VT.pdf
       hash: md5
@@ -321,7 +321,7 @@ stages:
       md5: b375ddbef3c48289b2172e3362f57fb6
       size: 98134
   towns@Cambridge-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Cambridge-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Cambridge-MA.pdf
     deps:
     - path: data/raw/Cambridge-MA.pdf
       hash: md5
@@ -353,7 +353,7 @@ stages:
       md5: 9ae361964e2a2d9c030e69df378bf55d
       size: 124521
   towns@Concord-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Concord-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Concord-MA.pdf
     deps:
     - path: data/raw/Concord-MA.pdf
       hash: md5
@@ -385,7 +385,7 @@ stages:
       md5: e06c67eec4b2a2501126f985b7649865
       size: 228025
   towns@Dedham-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Dedham-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Dedham-MA.pdf
     deps:
     - path: data/raw/Dedham-MA.pdf
       hash: md5
@@ -417,7 +417,7 @@ stages:
       md5: 461713a8c805d114a43b94bd88ed7d05
       size: 843521
   towns@Gloucester-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Gloucester-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Gloucester-MA.pdf
     deps:
     - path: data/raw/Gloucester-MA.pdf
       hash: md5
@@ -449,7 +449,7 @@ stages:
       md5: 043057800b33b34bd3eb72754c268e82
       size: 271613
   towns@Harvard-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Harvard-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Harvard-MA.pdf
     deps:
     - path: data/raw/Harvard-MA.pdf
       hash: md5
@@ -481,7 +481,7 @@ stages:
       md5: 42b7c89567684ac2e5e61e2a0e48b738
       size: 121696
   towns@Lincoln-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Lincoln-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Lincoln-MA.pdf
     deps:
     - path: data/raw/Lincoln-MA.pdf
       hash: md5
@@ -513,7 +513,7 @@ stages:
       md5: 49627aa08b057d00b8225daa4d370db1
       size: 208892
   towns@Medford-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Medford-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Medford-MA.pdf
     deps:
     - path: data/raw/Medford-MA.pdf
       hash: md5
@@ -545,7 +545,7 @@ stages:
       md5: c56284a3d86e24cfd69b4676ae05bdac
       size: 837272
   towns@Melrose-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Melrose-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Melrose-MA.pdf
     deps:
     - path: data/raw/Melrose-MA.pdf
       hash: md5
@@ -577,7 +577,7 @@ stages:
       md5: 69f7f302e71cfdaafad6b029a15b4a87
       size: 972077
   towns@Natick-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Natick-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Natick-MA.pdf
     deps:
     - path: data/raw/Natick-MA.pdf
       hash: md5
@@ -609,7 +609,7 @@ stages:
       md5: a9b26745270edff5ff967d42a542274a
       size: 151439
   towns@Wayland-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Wayland-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Wayland-MA.pdf
     deps:
     - path: data/raw/Wayland-MA.pdf
       hash: md5
@@ -641,7 +641,7 @@ stages:
       md5: dfbb1c2ce384d9713626888da9bd2b1b
       size: 993657
   towns@Wellesley-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Wellesley-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Wellesley-MA.pdf
     deps:
     - path: data/raw/Wellesley-MA.pdf
       hash: md5
@@ -673,7 +673,7 @@ stages:
       md5: 77db5c934a919c2cf0f6e8a900a7af5e
       size: 135122
   towns@Weston-MA:
-    cmd: llm_learning --llm-model gpt-4o --context-length 4096 data/raw/Weston-MA.pdf
+    cmd: llm_cap_research --llm-model gpt-4o --context-length 4096 data/raw/Weston-MA.pdf
     deps:
     - path: data/raw/Weston-MA.pdf
       hash: md5
@@ -705,7 +705,7 @@ stages:
       md5: 4b05f6e79dc7c8d4887b72b256738497
       size: 320474
   consolidate_tables:
-    cmd: poetry run python llm_learning/consolidate_tables.py data/interim/ data/raw/
+    cmd: poetry run python llm_cap_research/consolidate_tables.py data/interim/ data/raw/
     deps:
     - path: data/interim/
       hash: md5

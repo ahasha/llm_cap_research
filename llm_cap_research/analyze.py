@@ -9,15 +9,15 @@ import dotenv
 import pandas as pd
 import tiktoken
 import typer
+from dvclive import Live
 from langchain_core.documents import Document
 from langchain_core.exceptions import OutputParserException
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.pydantic_v1 import BaseModel, Field
 from typing_extensions import Annotated
 
-from dvclive import Live
-from llm_learning.consolidate_tables import consolidate_tables
-from llm_learning.logging_config import configure_logging
+from llm_cap_research.consolidate_tables import consolidate_tables
+from llm_cap_research.logging_config import configure_logging
 
 logger = logging.getLogger(__name__)
 

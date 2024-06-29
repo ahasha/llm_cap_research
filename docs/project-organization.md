@@ -32,30 +32,30 @@
 │
 ├── setup.cfg                  <- Project packaging and style configuration
 │
-├── setup.py                   <- Project installation script; makes project pip installable (pip install -e .) so 
+├── setup.py                   <- Project installation script; makes project pip installable (pip install -e .) so
 │                                 project module can be imported
 │
 ├── .dvc                       <- Data versioning cache and configuration using dvc; see https://dvc.org
 │   └── config                 <- YAML formatted configuration file for dvc project; defines default remote data storage cache location;
 │
-├── tests                      <- Automated test scripts; 
+├── tests                      <- Automated test scripts;
 │   └── data                   <- tests for data download and/or generation scripts
 │   │   └── test_make_dataset.py
 │   │
-│   └── features               <- tests for feature generation scripts 
+│   └── features               <- tests for feature generation scripts
 │   │   └── test_build_features.py
 │   │
 │   ├── models                 <- tests for model training and prediction scripts
-│   │   │                         
+│   │   │
 │   │   ├── test_predict_model.py
 │   │   └── test_train_model.py
 │   │
 │   └── visualization           <- Scripts to create exploratory and results oriented visualizations
-│       └── test_visualize.py    
+│       └── test_visualize.py
 │
-├── llm_learning                <- Source code for use in this project.
+├── llm_cap_research                <- Source code for use in this project.
 │   │
-│   ├── __init__.py                               <- Makes llm_learning a Python module
+│   ├── __init__.py                               <- Makes llm_cap_research a Python module
 │   │
 │   ├── data                                      <- Scripts to download or generate data
 │   │   ├── make_dataset.py                       <- Utility CLI script to extract data from database tables to local parquet files.
