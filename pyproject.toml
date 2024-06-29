@@ -104,7 +104,6 @@ python-dotenv = "^1.0.0"
 pypdf = "^4.2.0"
 langchain-openai = "^0.1.7"
 typer = "^0.12.3"
-ruff = "^0.4.5"
 dvclive = "^3.46.0"
 
 [tool.poetry.group.dev.dependencies]
@@ -113,10 +112,9 @@ nbsphinx = "^0.9.1"
 pre-commit = "^3.2.2"
 myst-parser = "^1.0.0"
 sphinx-rtd-theme = "^1.2.0"
-flake8 = "^6.0.0"
 isort = "^5.12.0"
-brunette = "^0.2.8"
 pytest = "^7.3.1"
+ruff = "^0.4.5"
 sphinxcontrib-mermaid = "^0.8.1"
 
 [build-system]

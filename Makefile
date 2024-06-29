@@ -57,13 +57,12 @@ clean: ## Delete all compiled Python files
 	find . -type d -name "__pycache__" -delete
 
 .PHONY: lint
-lint: check_poetry ## Lint using flake8 and brunette (use `make format` to do formatting)
-	$(POETRY_RUN) flake8 llm_cap_research
-	$(POETRY_RUN) brunette --check --config pyproject.toml llm_cap_research
+lint: check_poetry ## Lint using ruff check
+	$(POETRY_RUN) ruff check llm_cap_research
 
 .PHONY: format
-format: check_poetry ## Format source code with brunette
-	$(POETRY_RUN) brunette --config pyproject.toml llm_cap_research
+format: check_poetry ## Format source code with ruff
+	$(POETRY_RUN) ruff format --config pyproject.toml llm_cap_research
 
 
 #################################################################################
