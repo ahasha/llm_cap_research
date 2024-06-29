@@ -21,11 +21,11 @@ def main(source_yaml_path: str, output_path: str):
         for table in src["tables"]:
             table_rows.append(
                 dict(
-                table=f"{src['database']}.{src['schema']}.{table['name']}",
-                description=table.get("description", "Not provided"),
+                    table=f"{src['database']}.{src['schema']}.{table['name']}",
+                    description=table.get("description", "Not provided"),
                 )
             )
-    
+
     with open(output_path, "w") as f:
         pd.DataFrame.from_dict(table_rows).to_markdown(f, index=False)
 
